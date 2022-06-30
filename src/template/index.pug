@@ -1,0 +1,361 @@
+extends layout/layout
+block header
+block content 
+    #container-page
+        #video-start
+            .topbar
+                .image-logo
+                    a(href="https://www.kkfund.co/") 
+                        img(src="./images/logo.png", alt="logo")
+                .social-link
+                    a(href="mailto:info@kkfund.co")
+                        img(src="./images/icon-mail.png", alt="icon mail") 
+                    a(href="https://twitter.com")
+                        img(src="./images/icon-tiwer.png", alt="icon mail") 
+            .content-slide-video
+                .title-slide-video KKDAO
+                .decs-slide-video
+                    .decs-item.decs-item-1
+                        span.text-bold First DAO 
+                        span run by a VC firm
+                    .decs-item.decs-item-2
+                        span in 
+                        span.text-bold Southeast Asia
+                .btn.btn-redirect-slide-video Step in
+            .list-video-start
+                .show-video-pc
+                    video#videopc1(playsinline)
+                        source(src="https://agency.breathtakingvietnam.com/wp-content/uploads/2022/06/1920x1080-Vien-da.mp4" type="video/mp4")
+                    video#videopc2.video-hidden(playsinline)
+                        source(src="https://agency.breathtakingvietnam.com/wp-content/uploads/2022/06/1920x1080-Zoom.mp4" type="video/mp4")
+                .show-video-laptop
+                    video#videolt1(playsinline)
+                        source(src="https://agency.breathtakingvietnam.com/wp-content/uploads/2022/06/1200x800-Vien-da.mp4" type="video/mp4")
+                    video#videolt2.video-hidden(playsinline)
+                        source(src="https://agency.breathtakingvietnam.com/wp-content/uploads/2022/06/1200x800-zoom.mp4" type="video/mp4")
+            .list-img_stone
+        #scroll-wrapper.content-main(onscroll="changeScroll()")
+            .topbar
+                .btn-back
+                    a(href="index.html")
+                        img(src="./images/arrow-left.png", alt="arrow left") 
+                .social-link
+                    a.icon-mail(href="mailto:info@kkfund.co")
+                        img(src="./images/icon-mail.png", alt="icon mail") 
+                    a.icon-twitter(href="https://twitter.com")
+                        img(src="./images/icon-tiwer.png", alt="icon mail") 
+            #page_about.section.section_about
+                .section-content
+                    .title-about
+                        .title-item.title-01 About
+                        .title-item.title-02 the
+                        .title-item.title-03 project
+                    .desc_slide
+                        .text-slide.text-slide-01
+                            span.text-bold KK DAO is the first DAO run by a VC firm in Southeast Asia. 
+                            span  We believe that
+                        .text-slide.text-slide-02
+                            span KK DAO can create opportunities for next generation talent in Web 3.0 in developing
+                        .text-slide.text-slide-03
+                            span countries, support the underserved talent in emerging markets. We build, support,
+                        .text-slide.text-slide-04
+                            span and invest in early blockchain-agnostic startups in the area, DAOs, DeFi, CeFi 
+                        .text-slide.text-slide-05
+                            span (centralized finance), Web3 Apps, Infrastructure, Wallet, Gaming, and NFT.
+                    .action-redirect
+                        button.redirect_sign_up Share your innovation here!
+                .image-stones
+                    .image-stone-01
+                        img(src="./images/Rock02.png", alt="img element")
+                    .image-stone-02
+                        img(src="./images/Rock01.png", alt="img element")
+                    .image-stone-03
+                        img(src="./images/Rock03.png", alt="img element")
+            .section.section_feature
+                .section-content
+                    .title-content FOCUS PROJECT
+                    ul.list-feature
+                        li.rows-feature
+                            .item-feature
+                                .image-feature
+                                    img(src="./images/DAOs.png", alt="")
+                                .content-feature
+                                    .name DAOs
+                                    .performance-podium
+                                        img(src="./images/performance-podium.png", alt="")
+                            .item-feature
+                                .image-feature
+                                    img(src="./images/DeFi.png", alt="")
+                                .content-feature
+                                    .name DeFi
+                                    .performance-podium
+                                        img(src="./images/performance-podium.png", alt="")
+                            .item-feature
+                                .image-feature
+                                    img(src="./images/CeFi.png", alt="")
+                                .content-feature
+                                    .name CeFi
+                                    .performance-podium
+                                        img(src="./images/performance-podium.png", alt="")
+                            .item-feature
+                                .image-feature
+                                    img(src="./images/Web3-Apps.png", alt="")
+                                .content-feature
+                                    .name Web3-Apps
+                                    .performance-podium
+                                        img(src="./images/performance-podium.png", alt="")
+                        li.rows-feature
+                            .item-feature
+                                .image-feature
+                                    img(src="./images/Infratructure.png", alt="")
+                                .content-feature
+                                    .name Infrastructure
+                                    .performance-podium
+                                        img(src="./images/performance-podium.png", alt="")
+                            .item-feature
+                                .image-feature
+                                    img(src="./images/Walet.png", alt="")
+                                .content-feature
+                                    .name Wallet
+                                    .performance-podium
+                                        img(src="./images/performance-podium.png", alt="")
+                            .item-feature
+                                .image-feature
+                                    img(src="./images/Gaming.png", alt="")
+                                .content-feature
+                                    .name Gaming
+                                    .performance-podium
+                                        img(src="./images/performance-podium.png", alt="")
+                            .item-feature
+                                .image-feature
+                                    img(src="./images/NFT.png", alt="")
+                                .content-feature
+                                    .name NFT
+                                    .performance-podium
+                                        img(src="./images/performance-podium.png", alt="")
+                .image-stones
+                    .image-stone-04
+                        img(src="./images/Rock04.png", alt="img element")
+            #page_brand.section.section_brand
+                .section-content
+                    .title-content Mistletoe
+                    .desc_slide
+                        .line_effect.line-effect-01
+                            span  Mistletoe is a venture capital firm that prefers to invest in start up companies. The 
+                        .line_effect.line-effect-02
+                            span firm seeks to invest in the education, software and support sectors. It is based in 
+                        .line_effect.line-effect-03
+                            span Tokyo, Japan and was founded in 2013.
+                    .brand-carousel
+                        .img-carousel-items
+                            .img-items
+                                img(src="./images/img-brand.png", alt="")
+                            .img-items
+                                img(src="./images/img-brand.png", alt="")
+                            .img-items
+                                img(src="./images/img-brand.png", alt="")
+                            .img-items
+                                img(src="./images/img-brand.png", alt="")
+                            .img-items
+                                img(src="./images/img-brand.png", alt="")
+                            .img-items
+                                img(src="./images/img-brand.png", alt="")
+                    .title-main   
+                        span.title_slide.title_effect--01 The
+                        span.title_slide.title_effect--02 Investor
+            #page_register.section.section_register
+                .section-content
+                    #btn_signup.btn.btn-show-popup Sign up
+                    #form-signup
+                        .title-form Sign up
+                        form(action="")
+                            .form-group
+                                input.form-control.full-width(type="text" placeholder="Project name:")
+                            .form-group.group-three
+                                input.form-control.input-small(type="text" placeholder="Name:")
+                                input.form-control.input-small(type="email" placeholder="Email:")
+                                input.form-control.input-small(type="phone" placeholder="Phone:")
+                            .form-group
+                                textarea.form-control.full-width(rows="3" placeholder="Project Description:")
+                            .action-signup
+                                .btn.btn-form-signup send
+                .image-stones
+                    .image-stone-05
+                        img(src="./images/Rock05.png", alt="img element")
+                    .image-stone-06
+                        img(src="./images/Rock06.png", alt="img element")
+                    .image-stone-07
+                        img(src="./images/Rock07.png", alt="img element")
+                    .image-stone-08
+                        img(src="./images/Rock08.png", alt="img element")
+block script
+    script.
+
+        const element = document.querySelector("#scroll-wrapper");
+        element.addEventListener('wheel', (event) => {
+            event.preventDefault();
+            element.scrollBy({
+                left: event.deltaY < 0 ? -150 : 150,
+            });
+        });      
+        
+        function getSizeDevice() {
+            let getWidth = window.innerWidth;
+            let getHeight = window.innerHeight;
+            if (getHeight == 979) {
+                $('#container-page').addClass('bg-size-79');
+                $('#container-page').removeClass('bg-size-47');
+                $('#container-page').removeClass('full-height');
+            } else if (getHeight == 947) {
+                $('#container-page').addClass('bg-size-47');
+                $('#container-page').removeClass('bg-size-79');
+                $('#container-page').removeClass('full-height');
+            } else {
+                $('#container-page').removeClass('bg-size-79');
+                $('#container-page').removeClass('bg-size-47');
+                $('#container-page').addClass('full-height');
+            }
+
+            if (getHeight == 667) {
+                $('#container-page').addClass('bg-size-667');
+            } else {
+                $('#container-page').removeClass('bg-size-667');
+            }
+
+            if (getHeight == 699) {
+                $('#container-page').addClass('bg-size-699');
+            } else {
+                $('#container-page').removeClass('bg-size-699');
+            }
+
+            if (getHeight == 799) {
+                $('#container-page').addClass('bg-size-799');
+            } else {
+                $('#container-page').removeClass('bg-size-799');
+            }
+        }
+
+        function changeScroll() {
+            const element = document.getElementById("scroll-wrapper");
+            let x = element.scrollLeft;
+            let y = element.scrollTop;
+            let getWidth = window.innerWidth;
+            console.log(x.toFixed());
+            console.log(getWidth);
+
+            if (getWidth < 1600 && x.toFixed() == 2100){
+                $('#page_brand').addClass('show_effect');
+                console.log('laptop');
+            } else if (getWidth > 1600 && x.toFixed() == 3300){
+                $('#page_brand').addClass('show_effect');
+                console.log('PC');
+            }
+        }
+
+        function playVideo(videoID) {
+            videoID.load();
+            videoID.playsinline = true;
+        }
+
+        function ensureVideoPlays(videoID) {
+            if(!videoID) return;            
+            const promise = videoID.play();
+            if(promise !== undefined){
+                promise.then(() => {
+                }).catch(error => {
+                    videoID.muted = true;
+                    videoID.play();
+                });
+            }
+        }
+
+        function startVideoStone() {
+            // video ore
+            let VdStart = document.getElementById("videopc1");
+            playVideo(VdStart);
+            ensureVideoPlays(VdStart);  
+        }
+
+        function zoomVideoStone() {
+            // video ore
+            let changeVdStart = document.getElementById("videopc2");
+            playVideo(changeVdStart);
+            ensureVideoPlays(changeVdStart);  
+        }
+
+        function startVideoStoneLT() {
+            // video ore
+            let VdStartLT = document.getElementById("videolt1");
+            playVideo(VdStartLT);
+            ensureVideoPlays(VdStartLT);  
+        }
+
+        function zoomVideoStoneLT() {
+            // video ore
+            let changeVdStartLT = document.getElementById("videolt2");
+            playVideo(changeVdStartLT);
+            ensureVideoPlays(changeVdStartLT);  
+        }
+
+        $(document).ready(function(){
+            startVideoStone();
+            startVideoStoneLT();
+            getSizeDevice();
+
+            setTimeout(function() {
+                $('.content-head-video').addClass('show-content');
+                $('.content-slide-video').addClass('show-content');
+            }, 3800);
+
+            $('.btn-redirect-slide-video').on('click', function() {
+                zoomVideoStone();
+                zoomVideoStoneLT();
+                $('#videopc1').addClass('hidden');
+                $('#videolt1').addClass('hidden');
+                $('.content-slide-video').removeClass('show-content');
+                setTimeout(function() {
+                    $('#video-start').hide(100);
+                    $('#scroll-wrapper').addClass('show-page');
+                }, 4300);
+                setTimeout(function() {
+                    $('#page_about').addClass('show-page');
+                }, 4800);
+            });
+
+            $('.img-carousel-items').slick({
+                centerMode: true,
+                centerPadding: '5px',
+                slidesToShow: 3,
+                dots: true,
+                responsive: [
+                    {
+                    breakpoint: 768,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '5px',
+                        slidesToShow: 1
+                    }
+                    },
+                    {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '5px',
+                        slidesToShow: 1
+                    }
+                    }
+                ]
+            });
+
+            $('.redirect_sign_up').on('click', function(){
+                var scrollTo = $('#page_register').position().left; 
+                $('#scroll-wrapper').animate({'scrollLeft': scrollTo}, 600);
+            });
+
+            $('#btn_signup').on('click', function() {
+                $(this).addClass('btn-hidden');
+                $('#form-signup').addClass('show');
+            });
+        });

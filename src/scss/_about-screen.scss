@@ -1,0 +1,313 @@
+.section_about {
+    .section-content {
+        background-image: url("../images/bg_01.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100vh;
+    }
+    .title-about {
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9;
+        @include responsive_1280 {
+            top: 345px;
+        }
+        @include responsive_1360 {
+            top: 320px;
+        }
+        @include responsive_1600 {
+            top: 345px;
+        }
+        @include responsive_1920 {
+            top: 400px;
+        }
+        @include responsive_2560 {
+            top: 735px;
+        }
+        .title-item {
+            font-family: 'SFU Futura book';
+            font-weight: 700;
+            font-size: 85px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            @include responsive_1600 {
+                font-size: 110px;
+            }
+            @include responsive_1920 {
+                font-size: 134px;
+            }
+            @include responsive_2560 {
+                font-size: 175px;
+            }
+            &.title-01 {
+                background: linear-gradient(75.27deg, #7C7D7F -24.99%, #C3C4C6 14.72%, #9EA0A3 100%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                text-fill-color: transparent;
+                transform: translateX(-350px);
+                opacity: 0;
+                transition: all .4s ease-in-out;
+            }
+            &.title-03 {
+                background: linear-gradient(75.27deg, #7C7D7F -10.99%, #9EA0A3 20.04%, #CBCCCE 100%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                text-fill-color: transparent;
+                transform: translateX(-100px);
+                opacity: 0;
+                transition: all .4s ease-in-out 0.2s;
+            }
+            &.title-02 {
+                color: #9EA0A3;
+                margin: 0px 90px;
+                transform: translateX(-250px);
+                opacity: 0;
+                transition: all .4s ease-in-out 0.1s;
+            }
+        }
+    }
+    .desc_slide {
+        position: absolute;
+        right: 39px;
+        top: 475px;
+        z-index: 9;
+        @include responsive_1280 {
+            top: 475px;
+            right: 53px;
+        }
+        @include responsive_1360 {
+            top: 455px;
+            right: 95px;
+        }
+        @include responsive_1600 {
+            top: 515px;
+            right: 52px;
+        }
+        @include responsive_1920 {
+            top: 620px;
+            right: 50px;
+        }
+        @include responsive_2560 {
+            top: 1008px;
+            right: 85px;
+        }
+        span {
+            font-size: 12px;
+            letter-spacing: -0.01em;
+            @include responsive_1600 {
+                font-size: 16px;
+            }
+            @include responsive_1920 {
+                font-size: 20px;
+            }
+            @include responsive_2560 {
+                font-size: 27px;
+            }
+        }
+        .text-bold {
+            font-weight: bold;
+        }
+        .text-slide {
+            margin-bottom: 4px;
+            @include responsive_1360 {
+                margin-bottom: 5px;
+            }
+        }
+        .text-slide-01 {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all .25s ease-in-out;
+        }
+        .text-slide-02 {
+            opacity: 0;
+            transform: translateY(80px);
+            transition: all .25s ease-in-out 0.1s;
+        }
+        .text-slide-03 {
+            opacity: 0;
+            transform: translateY(110px);
+            transition: all .25s ease-in-out 0.2s;
+        }
+        .text-slide-04 {
+            opacity: 0;
+            transform: translateY(130px);
+            transition: all .25s ease-in-out 0.3s;
+        }
+        .text-slide-05 {
+            opacity: 0;
+            transform: translateY(150px);
+            transition: all .25s ease-in-out 0.4s;
+        }
+    }
+    .action-redirect {
+        position: absolute;
+        top: 610px;
+        right: 384px;
+        z-index: 9999;
+        opacity: 0;
+        transform: translateY(70px);
+        transition: all .25s ease-in-out 0.35s;
+        @include responsive_1280 {
+            top: 610px;
+            right: 148px;
+        }
+        @include responsive_1360 {
+            top: 590px;
+            right: 140px;
+        }
+        @include responsive_1600 {
+            top: 662px;
+            right: 242px;
+        }
+        @include responsive_1920 {
+            top: 800px;
+            right: 384px;
+        }
+        @include responsive_2560 {
+            top: 1240px;
+            right: 665px;
+        }
+        .redirect_sign_up {
+            background-color: #FFD953;
+            border: 1px solid #FFD953;
+            border-radius: 16px;
+            box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.4), 3px 3px 6px rgba(105, 129, 162, 0.2);
+            color: #000000;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif !important;
+            text-transform: uppercase;
+            letter-spacing: 0.195em;
+            font-weight: 900;
+            padding: 21px 38px;
+            text-decoration: none;
+            @include responsive_1280 {
+                padding: 12px;
+            }
+            @include responsive_1360 {
+                padding: 21px 38px;
+            }
+            @include responsive_1600 {
+                padding: 21px 38px;
+            }
+            @include responsive_1920 {
+                padding: 21px 38px;
+            }
+            @include responsive_2560 {
+                padding: 21px 38px;
+                right: 80px
+            }
+        }
+    }
+    &.show-page {
+        .title-about {
+            .title-item {
+                &.title-01 {
+                    opacity: 1;
+                    transform: translateX(0px);
+                }
+                &.title-03 {
+                    opacity: 1;
+                    transform: translateX(0px);
+                }
+                &.title-02 {
+                    opacity: 1;
+                    transform: translateX(0px);
+                }
+            }
+        }
+        .desc_slide {
+            .text-slide-01 {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+            .text-slide-02 {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+            .text-slide-03 {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+            .text-slide-04 {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+            .text-slide-05 {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+        .action-redirect {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+}
+
+.bg-size-79 {
+    .section_about {
+        .title-about {
+            top: 400px;
+        }
+        .desc_slide {
+            top: 604px
+        }
+        .action-redirect {
+            top: 780px;
+        }
+    }
+}
+
+.bg-size-47 {
+    .section_about {
+        .desc_slide {
+            top: 590px
+        }
+    }
+}
+
+.bg-size-667 {
+    .section_about {
+        .title-about {
+            top: 245px;
+        }
+        .desc_slide {
+            top: 395px;
+        }
+        .action-redirect {
+            top: 530px;
+        }
+    }
+}
+
+.bg-size-699 {
+    .section_about {
+        .desc_slide {
+            bottom: 170px;
+        }
+        .action-redirect {
+            bottom: 105px;
+        }
+    }
+}
+
+.bg-size-799 {
+    .section_about {
+        .desc_slide {
+            bottom: 195px;
+        }
+        .action-redirect {
+            bottom: 105px;
+        }
+    }
+}

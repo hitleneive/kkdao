@@ -1,0 +1,269 @@
+.section_brand {
+    position: relative;
+    text-align: center;
+    .title-content {
+        color: #000000;
+        font-family: 'SFU Futura Bold';
+        font-size: 28px;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        margin: 0px auto 35px;
+        position: relative;
+        top: 90px;
+        left: -200px;
+        right: 0;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+        @include responsive_1280 {
+            top: 37px;
+        }
+        @include responsive_1360 {
+            top: 40px;
+        }
+        @include responsive_1600 {
+            top: 60px;
+        }
+        @include responsive_1920 {
+            top: 90px;
+        }
+    }
+    .desc_slide {
+        position: relative;
+        top: 96px;
+        @include responsive_1280 {
+            top: 45px;
+        }
+        @include responsive_1360 {
+            top: 45px;
+        }
+        @include responsive_1600 {
+            top: 96px;
+        }
+        @include responsive_1920 {
+            top: 96px;
+        }
+    }
+    .brand-carousel {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 99px;
+        @include responsive_1280 {
+            top: 258px;
+        }
+        @include responsive_1360 {
+            top: 288px;
+        }
+        @include responsive_1600 {
+            top: 288px;
+        }
+        @include responsive_1920 {
+            top: 350px;
+        }
+        img {
+            opacity: 0;
+            transition: all 0.5s ease-in-out 0.4s;
+            @include responsive_1280 {
+                width: 205px;
+            }
+            @include responsive_1360 {
+                width: 205px;
+            }
+            @include responsive_1600 {
+                width: 205px;
+            }
+            @include responsive_1920 {
+                width: auto;
+            }
+        }
+        .slick-center {
+            img {
+                transform: rotateY(-540deg);
+            }
+        }
+        .slick-dots {
+            opacity: 0;
+            transition: all 0.5s ease-in-out 0.4s;
+        }
+    }
+    .title-main {
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        bottom: 47px;
+    }
+    .title_slide {
+        font-family: 'SFU Futura Book';
+        font-size: 108px;
+        font-weight: 400;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        position: relative;
+        @include responsive_1280 {
+            font-size: 95px;
+        }
+        @include responsive_1920 {
+            font-size: 108px;
+        }
+        &.title_effect--01,
+        &.title_effect--02 {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-fill-color: transparent;
+            opacity: 0;
+        }
+        &.title_effect--01 {
+            background: linear-gradient(75.27deg, #9EA0A3 -14.99%, #C3C4C6 25.72%, #9EA0A3 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-fill-color: transparent;
+            margin-right: 50px;
+            left: -350px;
+            transition: all 0.3s ease-in-out 0.8s;
+        }
+        &.title_effect--02 {
+            background: linear-gradient(75.27deg, #9EA0A3 -12.99%, #9EA0A3 10.72%, #CBCCCE 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-fill-color: transparent;
+            left: -550px;
+            transition: all 0.3s ease-in-out 1s;
+        }
+    }
+    .line_effect {
+        margin-bottom: 8px;
+        position: relative;
+        &.line-effect-01 {
+            top: 80px;
+            opacity: 0;
+            transition: all 0.3s ease-in-out 0.1s;
+        }
+        &.line-effect-02 {
+            top: 80px;
+            opacity: 0;
+            transition: all 0.3s ease-in-out 0.2s;
+        }
+        &.line-effect-03 {
+            top: 80px;
+            opacity: 0;
+            transition: all 0.3s ease-in-out 0.3s;
+        }
+    }
+    .section-content {
+        background-image: url("../images/bg_03b.png");
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: contain;
+        width: 100%;
+        height: 100vh;
+    }
+    .img-carousel-items {
+        width: 530px;
+        @include responsive_1280 {
+            width: 530px;
+        }
+        @include responsive_1920 {
+            width: 1024px;
+        }
+        .slick-list {
+            padding: 0px !important;
+        }
+        .slick-slide {
+            .img-items {
+                transform: scale(0.5);
+                opacity: 0.5;
+                transition: all .2s ease-in-out;
+            }
+            &.slick-center {
+                .img-items {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    &.show_effect {
+        .title-content {
+            left: 0px;
+            opacity: 1;
+        }
+        .brand-carousel {
+            img {
+                opacity: 1;
+            }
+            .slick-center {
+                img {
+                    transform: rotateY(0deg);
+                }
+            }
+            .slick-dots {
+                opacity: 1;
+            }
+        }
+        .title_slide {
+            &.title_effect--01 {
+                opacity: 1;
+                left: 0px;
+            }
+            &.title_effect--02 {
+                opacity: 1;
+                left: 0px;
+            }
+        }
+        .line_effect {
+            &.line-effect-01 {
+                opacity: 1;
+                top: 0px;
+            }
+            &.line-effect-02 {
+                opacity: 1;
+                top: 0px;
+            }
+            &.line-effect-03 {
+                opacity: 1;
+                top: 0px;
+            }
+        }
+    }
+}
+
+.bg-size-667 {
+    .section_brand {
+        .title-content {
+            top: 32px;
+        }
+        .desc_slide {
+            top: 38px;
+        }
+        .brand-carousel {
+            top: 220px;
+        }
+        .title-main {
+            bottom: -5px;
+        }
+    }
+}
+
+.bg-size-79 {
+    .section_brand {
+        .title-content {
+            top: 74px;
+        }
+        .desc_slide {
+            top: 86px;
+        }
+        .brand-carousel {
+            top: 284px;
+        }
+        .title-main {
+            bottom: 20px;
+        }
+    }
+}

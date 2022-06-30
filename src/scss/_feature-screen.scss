@@ -1,0 +1,111 @@
+.section_feature {
+    .title-content {
+        font-size: 1.75rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.4em;
+        margin: 80px 0px 25px 130px;
+    }
+    .list-feature {
+        margin: 35px 40px 0px;
+        .rows-feature {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin-bottom: 99px;
+            @include responsive_1280 {
+                margin-bottom: 99px;
+            }
+            @include responsive_1360 {
+                margin-bottom: 90px;
+            }
+            @include responsive_1920 {
+                margin-bottom: 150px;
+            }
+        }
+        .item-feature {
+            cursor: pointer;
+            position: relative;
+            width: 315px;
+            @include responsive_1920 {
+                width: 315px;
+            }
+            .image-feature {
+                text-align: center;
+                position: relative;
+                @include responsive_1280 {
+                    img {
+                        width: 220px;
+                    }
+                }
+                @include responsive_1920 {
+                    min-height: 235px;
+                    img {
+                        width: auto;
+                    }
+                }
+                &:hover {
+                    animation: change_position_icon 1.3s ease-in-out infinite;
+                }
+            }
+        }
+        .content-feature {
+            position: relative;
+            .name {
+                font-size: 24px;
+                position: absolute;
+                text-align: center;
+                margin: auto;
+                left: 0;
+                right: 0;
+                bottom: -75px;
+                z-index: 9;
+                @include responsive_1280 {
+                    bottom: -54px;
+                }
+                @include responsive_1920 {
+                    bottom: -75px;
+                }
+            }
+            .performance-podium {
+                position: absolute;
+                @include responsive_1280 {
+                    left: -35%;
+                }
+                @include responsive_1360 {
+                    left: -30%;
+                }
+                @include responsive_1920 {
+                    left: -67%;
+                }
+            }
+            @include responsive_1280 {
+                img {
+                    width: 360px;
+                }
+            }
+            @include responsive_1920 {
+                img {
+                    width: auto;
+                }
+            }
+        }
+    }
+}
+
+.bg-size-667 {
+    .section_feature {
+        .title-content {
+            margin: 70px 0px 25px 130px;
+        }
+        .list-feature {
+            .item-feature {
+                .image-feature {
+                    img {
+                        width: 175px;
+                    }
+                }
+            }
+        }
+    }
+}

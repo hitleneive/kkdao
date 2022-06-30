@@ -870,6 +870,13 @@ display: none; }
     bottom: -190px;
     opacity: 1; }
 
+#videopc2, #videolt2 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+    
 .bg-size-667 #video-start .content-slide-video .title-slide-video {
   bottom: 80px;
   letter-spacing: 130px;

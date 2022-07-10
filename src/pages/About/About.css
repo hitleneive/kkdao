@@ -4,57 +4,43 @@
     right: 0;
     bottom: 0;
     left: 0;
-
     height: 100vh;
     width: 100vw;
     position: relative;
-
     background-image: url("../../assets/resources/pc/about-bg.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-color: transparent;
     /* display: inline-block; */
   }
-
   #backgroundContainer {
     position: absolute;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
-
   #rockHeaderContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-
   #introContainer {
     position: absolute;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
-
   #title {
-    background: linear-gradient(
-      75.27deg,
-      #7c7d7f -24.99%,
-      #c3c4c6 14.72%,
-      #9ea0a3 57.04%,
-      #cbccce 100%
-    );
+    background: linear-gradient( 75.27deg, #7c7d7f -24.99%, #c3c4c6 14.72%, #9ea0a3 57.04%, #cbccce 100%);
     text-align: center;
     font-size: 10vh;
     max-lines: 1;
@@ -66,21 +52,19 @@
     font-weight: 400;
     margin-top: 150px;
     margin-bottom: 0;
+    white-space: break-spaces;
   }
-
   #subtitleContainer {
     width: 35%;
     transform: translateX(50%);
     white-space: normal;
     margin-left: 15%;
   }
-
   #subtitle {
     text-align: justify;
     font-size: 90%;
     line-height: 130%;
   }
-
   #shareInnovationBtn {
     float: left;
     background: #ffd953;
@@ -91,31 +75,24 @@
     border-radius: 16px;
     font-family: MontserratBold;
   }
-
   .btn:hover {
-    box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.4),
-      3px 3px 6px rgba(105, 129, 162, 0.2);
+    box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.4), 3px 3px 6px rgba(105, 129, 162, 0.2);
   }
-
   #about-footer {
     display: flex;
-
     justify-content: space-between;
     align-items: center;
   }
-
   #about-rock1 {
     width: 20vw;
     animation: about-rock1-animation 4s infinite linear alternate;
   }
-
   #about-rock2 {
     width: 10%;
     width: 8%;
     animation: about-rock2-animation 4s infinite linear both;
     margin-left: 10%;
   }
-
   #about-rock3 {
     display: block;
     transform: translate(5vw);
@@ -125,16 +102,14 @@
     animation: about-rock3-animation 4s infinite linear alternate;
     z-index: 1000;
   }
-
   @keyframes about-rock1-animation {
     from {
-      transform: translate(-10%, -15%);
+      transform: translateX(-10%, -15%);
     }
     to {
       transform: translateX(10%, 15%);
     }
   }
-
   @keyframes about-rock2-animation {
     from {
       transform: rotate(0deg) translate(-10%, -10%) rotate(0deg);
@@ -143,7 +118,6 @@
       transform: rotate(360deg) translate(-10%, -10%) rotate(-360deg);
     }
   }
-
   @keyframes about-rock3-animation {
     from {
       transform: rotate(360deg) translate(-0%, -10%) scale(0.9) rotate(-360deg);
@@ -152,95 +126,68 @@
       transform: rotate(0deg) translate(-0%, -10%) scale(1.1) rotate(0deg);
     }
   }
-
   @font-face {
     font-family: "SFUFuturaBold";
-    src: local("SFUFuturaBold"),
-      url(../../assets/fonts/SFU/SFUFuturaBold.TTF) format("woff");
+    src: local("SFUFuturaBold"), url(../../assets/fonts/SFU/SFUFuturaBold.TTF) format("woff");
   }
-
   @font-face {
     font-family: "SFUFuturaRegular";
-    src: local("SFUFuturaRegular"),
-      url(../../assets/fonts/SFU/SFUFuturaRegular.TTF) format("woff");
+    src: local("SFUFuturaRegular"), url(../../assets/fonts/SFU/SFUFuturaRegular.TTF) format("woff");
   }
-
   @font-face {
     font-family: "MontserratRegular";
-    src: local("MontserratRegular"),
-      url(../../assets/fonts/Montserrat/Montserrat-Regular.ttf) format("woff");
+    src: local("MontserratRegular"), url(../../assets/fonts/Montserrat/Montserrat-Regular.ttf) format("woff");
   }
-
   @font-face {
     font-family: "MontserratBold";
-    src: local("MontserratBold"),
-      url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf) format("woff");
+    src: local("MontserratBold"), url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf) format("woff");
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 999px) {
   .about-root-container {
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-
     height: 100vh;
     width: 100vw;
     position: relative;
-
-    background-image: url("../../assets/resources/mobile/about-bg.svg");
-    background-size: contain;
-    background-repeat: repeat-x;
-
-    /* display: inline-block; */
+    background-image: url("../../assets/resources/pc/about-bg.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 30%;
   }
-
   #backgroundContainer {
     position: absolute;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
-
   #rockHeaderContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    position: relative;
   }
-
   #introContainer {
     position: absolute;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-left: 5%;
     margin-right: 5%;
   }
-
   #title {
     word-wrap: break-word;
-    background: linear-gradient(
-      75.27deg,
-      #7c7d7f -24.99%,
-      #c3c4c6 14.72%,
-      #9ea0a3 57.04%,
-      #cbccce 100%
-    );
-    text-align: start;
-    font-size: 15vw;
+    background: linear-gradient( 75.27deg, #7c7d7f -24.99%, #c3c4c6 14.72%, #9ea0a3 57.04%, #cbccce 100%);
+    font-size: 11.7vw;
     max-lines: 1;
-    white-space: normal;
     transform: translateY(-10vh);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -248,74 +195,72 @@
     font-family: SFUFuturaRegular;
     font-weight: 400;
     margin-bottom: 0;
+    white-space: break-spaces;
+    margin-left: 11vw;
+    text-align: left;
+    margin-right: 10vw;
+    line-height: 1;
+    letter-spacing: 0.2em;
   }
-
   #subtitleContainer {
     white-space: normal;
   }
-
   #subtitle {
     margin-top: 2vh;
-    text-align: justify;
     font-size: medium;
-    line-height: 100%;
+    line-height: 160%;
     transform: translateY(-10vh);
-  }
-
-  #shareInnovationBtn {
-    position: absolute;
-    bottom: 0;
+    margin-left: 30vw;
+    margin-right: 13.8vw;
     margin-bottom: 5vh;
-    left: 0;
-    right: 0;
-
+  }
+  #shareInnovationBtn {
     background: #ffd953;
-    padding: 16px;
+    padding: 24px 32px;
     border-width: 0;
     letter-spacing: 3px;
     text-transform: uppercase;
     border-radius: 16px;
     font-family: MontserratBold;
+    transform: translateY(-10vh);
+    margin-left: 30vw;
+    margin-right: 13.8vw;
+    font-size: 12px;
   }
-
   .btn:hover {
-    box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.4),
-      3px 3px 6px rgba(105, 129, 162, 0.2);
+    box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.4), 3px 3px 6px rgba(105, 129, 162, 0.2);
   }
-
   #about-footer {
     position: absolute;
     bottom: 0;
-    margin-bottom: 15vh;
+    margin-bottom: 11vh;
     width: 100vw;
-
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
   }
-
   #about-rock1 {
-    width: 20vw;
+    width: 35vw;
     animation: about-rock1-animation 4s infinite linear alternate;
+    position: relative;
+    left: -9vw;
   }
-
   #about-rock2 {
-    width: 10%;
     width: 8%;
     animation: about-rock2-animation 4s infinite linear both;
-    margin-left: 10%;
+    position: absolute;
+    top: 21vh;
+    right: 13vw;
   }
-
   #about-rock3 {
-    display: block;
-    transform: translate(5vw);
-    width: 10vw;
-    height: 10vw;
-    align-self: flex-end;
+    position: relative;
+    top: -17vh;
+    right: 3vw;
+    width: 3vw;
+    height: 3vw;
     animation: about-rock3-animation 4s infinite linear alternate;
   }
-
   @keyframes about-rock1-animation {
     from {
       transform: translate(-10%, -15%);
@@ -324,7 +269,6 @@
       transform: translateX(10%, 15%);
     }
   }
-
   @keyframes about-rock2-animation {
     from {
       transform: rotate(0deg) translate(-10%, -20%) rotate(0deg);
@@ -333,7 +277,6 @@
       transform: rotate(360deg) translate(-10%, -20%) rotate(-360deg);
     }
   }
-
   @keyframes about-rock3-animation {
     from {
       transform: rotate(360deg) translate(-0%, -10%) scale(0.9) rotate(-360deg);
@@ -342,28 +285,59 @@
       transform: rotate(0deg) translate(-0%, -10%) scale(1.1) rotate(0deg);
     }
   }
-
   @font-face {
     font-family: "SFUFuturaBold";
-    src: local("SFUFuturaBold"),
-      url(../../assets/fonts/SFU/SFUFuturaBold.TTF) format("woff");
+    src: local("SFUFuturaBold"), url(../../assets/fonts/SFU/SFUFuturaBold.TTF) format("woff");
   }
-
   @font-face {
     font-family: "SFUFuturaRegular";
-    src: local("SFUFuturaRegular"),
-      url(../../assets/fonts/SFU/SFUFuturaRegular.TTF) format("woff");
+    src: local("SFUFuturaRegular"), url(../../assets/fonts/SFU/SFUFuturaRegular.TTF) format("woff");
   }
-
   @font-face {
     font-family: "MontserratRegular";
-    src: local("MontserratRegular"),
-      url(../../assets/fonts/Montserrat/Montserrat-Regular.ttf) format("woff");
+    src: local("MontserratRegular"), url(../../assets/fonts/Montserrat/Montserrat-Regular.ttf) format("woff");
   }
-
   @font-face {
     font-family: "MontserratBold";
-    src: local("MontserratBold"),
-      url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf) format("woff");
+    src: local("MontserratBold"), url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf) format("woff");
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .about-root-container {
+    background-image: url("../../assets/resources/mobile/about-bg.svg");
+  }
+  #title {
+    margin-left: 0;
+    margin-top: 24vh;
+  }
+  #subtitle {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 13.2vh;
+  }
+  #shareInnovationBtn {
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 3.2vw;
+    letter-spacing: 0.195em;
+    padding: 24px;
+    width: 100%;
+  }
+  #about-rock1 {
+    width: 40vw;
+    left: 74vw;
+    top: -57vh;
+  }
+  #about-rock2 {
+    width: 13vw;
+    top: 68vh;
+    right: 17vw;
+  }
+  #about-rock3 {
+    top: -5vh;
+    right: 78vw;
+    width: 5vw;
+    height: 5vw;
   }
 }

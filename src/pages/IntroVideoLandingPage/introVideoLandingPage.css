@@ -20,14 +20,25 @@
   z-index: 0;
 }
 
-#intro-center-rock {
-  position: absolute;
+.header{
+  position: fixed;
   top: 0;
-  bottom: 0;
   left: 0;
   right: 0;
+  z-index: 1;
+}
+
+#intro-center-rock .v360-viewport-container.v360-viewport{
+  height: 100vh;
+}
+#intro-center-rock .v360-image-container {
+  position: absolute;
+  top: -24px;
+  bottom: 0;
+  left: 20px;
+  right: 0;
   margin: auto;
-  height: 70%;
+  height: calc((9/16)*100vw - (9/16) * 530px);
   z-index: 1;
 }
 
@@ -123,21 +134,21 @@
 }
 
 .content {
-  top: 0;
+  bottom: 0;
   left: 0;
   position: absolute;
   width: 100vw;
-  height: 80vh;
   flex-direction: column;
   display: flex;
   z-index: 2;
 }
 
 .title {
-  z-index: 1000;
+  z-index: 1;
   text-align: center;
   width: 100vw;
-  margin-top: 27%;
+  padding-bottom: 150px;
+  margin-top: 0;
   margin-bottom: 0;
   font-family: SFUFuturaBold;
   font-size: 15vh;
@@ -173,19 +184,14 @@
 
 .mainContent {
   position: absolute;
-  top: 90%;
-  left: 4.5%;
+  right: 20%;
+  bottom: 15%;
   display: flex;
   flex-direction: column;
   font-weight: 400;
-  float: right;
-  margin-left: 58vw;
   font-style: normal;
   z-index: 2;
   text-transform: uppercase;
-  margin-top: 2%;
-  margin-bottom: 50px;
-  line-height: 180%;
 }
 
 .wrapButton {
@@ -213,6 +219,7 @@
   font-style: normal;
   letter-spacing: 0.195em;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .rockLandingPage {

@@ -25,10 +25,6 @@ class Image360Viewer extends Component {
     this.activeImage = props.start || 1;
     this.stopAtEdges = props.stopAtEdges ?? true;
 
-    props.callbackResetPosition(()=>{
-        return this.resetPosition();
-    })
-
     this.state = {
       lastX: 0,
       lastY: 0,

@@ -1,26 +1,30 @@
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import KKLogo from "../../assets/kkLogo.png";
 import IntroVideoMOV from "../../assets/video/1920x1080-Vien-da.mp4";
-import { useState, useMemo, useEffect, useRef } from "react";
-import "./introVideoLandingPage.css";
-import SocialButtons from "../../components/SocialButtons";
 import ZoomVideo from "../../assets/video/1920x1080-Zoom.mp4";
-import { AnimatePresence, motion } from "framer-motion";
 import Image360Viewer from "../../components/Image360Viewer";
+import SocialButtons from "../../components/SocialButtons";
+import "./introVideoLandingPage.css";
+
 function LandingPage({ onFinished }) {
+  const isSmallDesktop = window.innerWidth >= 768 && window.innerWidth <= 1440;
+  const isMobile = window.innerWidth < 768;
+
   const [renderText, setRenderText] = useState(false);
   const [coord, setCoord] = useState({ x: 0, y: 0 });
   const [currentImage, setCurrentImage] = useState(50);
   // const [hideContent, setHideContent] = useState(true);
-  const handleMouseMove = (e) => {
-    if (coord.x < e.screenX) {
-      if (currentImage === 100) return;
-      setCurrentImage(currentImage + 1);
-    } else if (coord.x > e.screenX) {
-      if (currentImage === 0) return;
-      setCurrentImage(currentImage - 1);
-    }
-    setCoord({ x: e.screenX, y: e.screenY });
-  };
+//   const handleMouseMove = (e) => {
+//     if (coord.x < e.screenX) {
+//       if (currentImage === 100) return;
+//       setCurrentImage(currentImage + 1);
+//     } else if (coord.x > e.screenX) {
+//       if (currentImage === 0) return;
+//       setCurrentImage(currentImage - 1);
+//     }
+//     setCoord({ x: e.screenX, y: e.screenY });
+//   };
 
   // 0 : stage intro
   // 1 : show static background

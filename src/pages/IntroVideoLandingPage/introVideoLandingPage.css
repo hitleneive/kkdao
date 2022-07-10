@@ -9,14 +9,12 @@
   /* background-image: url("../../assets/about-bg.svg");
   background-size: cover;
   background-repeat: no-repeat; */
-
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   margin: auto;
-
   z-index: 0;
 }
 
@@ -143,43 +141,39 @@
   z-index: 2;
 }
 
-.title {
-  z-index: 1;
-  text-align: center;
-  width: 100vw;
-  padding-bottom: 150px;
-  margin-top: 0;
-  margin-bottom: 0;
-  font-family: SFUFuturaBold;
-  font-size: 15vh;
-  /* background: linear-gradient(
+@media screen and (min-width: 1441px) {
+  .title {
+    z-index: 1;
+    text-align: center;
+    width: 100vw;
+    padding-bottom: 150px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: SFUFuturaBold;
+    font-size: 15vh;
+    /* background: linear-gradient(
     0deg,
     #ffffff 47.23%,
     rgba(255, 255, 255, 0.5) 94.32%
   ); */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  -text-fill-color: transparent;
-  text-shadow: -4px -4px 4px rgba(255, 255, 255, 0.4),
-    3px 3px 33px rgba(105, 129, 162, 0.2);
-  letter-spacing: 1.165em;
-  display: inline-block;
-  /* -webkit-text-stroke-width: 1px; */
-  /* -webkit-text-stroke-color: #444444; */
-  background: linear-gradient(
-    90deg,
-    #ffffff 47.23%,
-    rgba(255, 255, 255, 0.5) 94.32%
-  );
-  color: white;
-  -webkit-text-stroke: 1px transparent;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.title::first-letter {
-  margin-left: 1.165em;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -text-fill-color: transparent;
+    text-shadow: -4px -4px 4px rgba(255, 255, 255, 0.4), 3px 3px 33px rgba(105, 129, 162, 0.2);
+    letter-spacing: 1.165em;
+    display: inline-block;
+    /* -webkit-text-stroke-width: 1px; */
+    /* -webkit-text-stroke-color: #444444; */
+    background: linear-gradient( 90deg, #ffffff 47.23%, rgba(255, 255, 255, 0.5) 94.32%);
+    color: white;
+    -webkit-text-stroke: 1px transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .title::first-letter {
+    margin-left: 1.165em;
+  }
 }
 
 .mainContent {
@@ -234,26 +228,89 @@
   right: 38%;
 }
 
+@media screen and (max-width: 1440px) {
+  #intro-center-rock-background {
+    overflow: hidden;
+  }
+  .emailTwitter {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .emailLogo {
+    margin-bottom: 0;
+  }
+  .title {
+    z-index: 1000;
+    text-align: center;
+    margin-bottom: 0;
+    font-family: SFUFuturaBold;
+    font-size: 15vh;
+    font-weight: 700;
+    font-size: 7.8vh;
+    line-height: 100%;
+    position: absolute;
+    bottom: -11vh;
+    left: 51%;
+    transform: translate(-50%, -50%) !important;
+  }
+  .title span {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -text-fill-color: transparent;
+    text-shadow: -4px -4px 4px rgba(255, 255, 255, 0.4), 3px 3px 33px rgba(105, 129, 162, 0.2);
+    display: inline-block;
+    background: linear-gradient(0deg, #FFFFFF 47.23%, rgba(255, 255, 255, 0.5) 94.32%);
+    color: white;
+    -webkit-text-stroke: 1px transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #939393;
+  }
+  .title span:first-child {
+    letter-spacing: 0.05em;
+  }
+  .title span:last-child {
+    letter-spacing: 0.35em;
+  }
+  .mainContent {
+    top: 101%;
+    left: 0;
+    margin-left: 0;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+  .mainContent>p {
+    margin-bottom: 2vh;
+  }
+  #button {
+    box-shadow: -4px -4px 4px rgb(255 255 255 / 40%), 3px 3px 6px rgb(105 129 162 / 20%);
+    font-size: 12px;
+    padding: 20px 28px;
+    width: auto;
+    height: auto;
+  }
+}
+
 @font-face {
   font-family: "SFUFuturaBold";
-  src: local("SFUFuturaBold"),
-    url(../../assets/fonts/SFU/SFUFuturaBold.TTF) format("woff");
+  src: local("SFUFuturaBold"), url(../../assets/fonts/SFU/SFUFuturaBold.TTF) format("woff");
 }
 
 @font-face {
   font-family: "SFUFuturaRegular";
-  src: local("SFUFuturaRegular"),
-    url(../../assets/fonts/SFU/SFUFuturaRegular.TTF) format("woff");
+  src: local("SFUFuturaRegular"), url(../../assets/fonts/SFU/SFUFuturaRegular.TTF) format("woff");
 }
 
 @font-face {
   font-family: "MontserratRegular";
-  src: local("MontserratRegular"),
-    url(../../assets/fonts/Montserrat/Montserrat-Regular.ttf) format("woff");
+  src: local("MontserratRegular"), url(../../assets/fonts/Montserrat/Montserrat-Regular.ttf) format("woff");
 }
 
 @font-face {
   font-family: "MontserratBold";
-  src: local("MontserratBold"),
-    url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf) format("woff");
+  src: local("MontserratBold"), url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf) format("woff");
 }

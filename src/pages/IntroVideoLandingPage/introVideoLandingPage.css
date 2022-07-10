@@ -9,6 +9,7 @@
   /* background-image: url("../../assets/about-bg.svg");
   background-size: cover;
   background-repeat: no-repeat; */
+  transition: opacity 0.3s ease;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -16,9 +17,10 @@
   right: 0;
   margin: auto;
   z-index: 0;
+  overflow: hidden;
 }
 
-.header{
+.header {
   position: fixed;
   top: 0;
   left: 0;
@@ -26,17 +28,23 @@
   z-index: 1;
 }
 
-#intro-center-rock .v360-viewport-container.v360-viewport{
+#intro-center-rock .v360-viewport-container.v360-viewport {
   height: 100vh;
 }
+
 #intro-center-rock .v360-image-container {
   position: absolute;
-  top: -24px;
+  top: -2.2vw;
   bottom: 0;
-  left: 20px;
+  left: 1.7vw;
   right: 0;
   margin: auto;
-  height: calc((9/16)*100vw - (9/16) * 530px);
+  /* height: calc((9/16)*100vw - (9/16) * 530px); */
+  min-width: 26.2vw;
+  /* min-width: calc((500 / 1920) * 100vw);
+  min-height: calc((700 / 1024) * 100vh);
+  height: fit-content;
+  width: fit-content; */
   z-index: 1;
 }
 
@@ -48,11 +56,11 @@
 }
 
 .visible {
-  visibility: visible;
+  opacity: 1;
 }
 
 .invisible {
-  visibility: hidden;
+  opacity: 0;
 }
 
 #intro-video-start {
@@ -240,6 +248,9 @@
   .emailLogo {
     margin-bottom: 0;
   }
+  .content {
+    bottom: 24vh;
+  }
   .title {
     z-index: 1000;
     text-align: center;
@@ -250,7 +261,7 @@
     font-size: 7.8vh;
     line-height: 100%;
     position: absolute;
-    bottom: -11vh;
+    bottom: -9vh;
     left: 51%;
     transform: translate(-50%, -50%) !important;
   }
@@ -285,6 +296,7 @@
   }
   .mainContent>p {
     margin-bottom: 2vh;
+    line-height: 2;
   }
   #button {
     box-shadow: -4px -4px 4px rgb(255 255 255 / 40%), 3px 3px 6px rgb(105 129 162 / 20%);

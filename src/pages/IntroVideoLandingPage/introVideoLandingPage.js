@@ -15,16 +15,16 @@ function LandingPage({ onFinished }) {
   const [coord, setCoord] = useState({ x: 0, y: 0 });
   const [currentImage, setCurrentImage] = useState(50);
   // const [hideContent, setHideContent] = useState(true);
-//   const handleMouseMove = (e) => {
-//     if (coord.x < e.screenX) {
-//       if (currentImage === 100) return;
-//       setCurrentImage(currentImage + 1);
-//     } else if (coord.x > e.screenX) {
-//       if (currentImage === 0) return;
-//       setCurrentImage(currentImage - 1);
-//     }
-//     setCoord({ x: e.screenX, y: e.screenY });
-//   };
+  //   const handleMouseMove = (e) => {
+  //     if (coord.x < e.screenX) {
+  //       if (currentImage === 100) return;
+  //       setCurrentImage(currentImage + 1);
+  //     } else if (coord.x > e.screenX) {
+  //       if (currentImage === 0) return;
+  //       setCurrentImage(currentImage - 1);
+  //     }
+  //     setCoord({ x: e.screenX, y: e.screenY });
+  //   };
 
   // 0 : stage intro
   // 1 : show static background
@@ -117,7 +117,15 @@ function LandingPage({ onFinished }) {
                 }}
                 exit={{ opacity: 0, y: 100 }}
               >
-                KKDAO
+                {isMobile || isSmallDesktop ? (
+                  <>
+                    <span>KK&nbsp;</span>
+                    <br />
+                    <span>DAO</span>
+                  </>
+                ) : (
+                  "KKDAO"
+                )}
               </motion.h1>
               <motion.div
                 className="mainContent"

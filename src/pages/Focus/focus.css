@@ -5,7 +5,6 @@
   display: inline-block;
   overflow: hidden;
   position: relative;
-
   background-image: url("../../assets/focus-bg.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -86,8 +85,116 @@
   width: 75%;
 }
 
+@media screen and (max-width: 1440px) {
+  .focusPage {
+    height: auto;
+    padding: 100px 0;
+  }
+  .titleFocus .child {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+  .slideWrapper {
+    max-width: 480px;
+    margin: auto;
+  }
+  .item {}
+  .itemInner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .img {
+    transform: scale(1);
+    transition: all 0.3s ease;
+    width: 180px;
+    height: auto;
+  }
+  .name {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 160%;
+    text-align: center;
+    letter-spacing: -0.01em;
+    letter-spacing: 2px;
+    margin-top: 60px;
+    opacity: 1;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    margin-top: 70px;
+    font-family: 'MontserratRegular';
+  }
+  .buc {
+    margin: auto;
+    display: block;
+    top: -100px;
+    z-index: 0;
+    position: relative;
+    margin-bottom: -100px;
+  }
+  .slick-slider .slick-slide:not(.slick-current) .img {
+    transform: scale(0.5);
+  }
+  .action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8px;
+  }
+  .arrow {
+    transition: all 0.3s ease;
+  }
+  .arrow:hover svg path {
+    stroke: #FFD953;
+  }
+  .arrowPrev {}
+  .arrowNext {
+    transform: rotateY(180deg);
+  }
+  .number {
+    margin: 0 16px;
+    font-family: 'SFUFuturaRegular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    text-transform: uppercase;
+    background: linear-gradient(75.27deg, #7C7D7F -24.99%, #C3C4C6 14.72%, #9EA0A3 57.04%, #CBCCCE 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+  }
+  .actionNumber {
+    font-family: 'SFUFuturaRegular';
+    font-size: 49.7129px;
+  }
+  .totalNumber {}
+}
+
 @font-face {
   font-family: "SFUFutura";
-  src: local("SFUFutura"),
-    url(../../assets/fonts/SFU/SFUFuturaBold.TTF) format("woff");
+  src: local("SFUFutura"), url(../../assets/fonts/SFU/SFUFuturaBold.TTF) format("woff");
+}
+@font-face {
+  font-family: "SFUFuturaBold";
+  src: local("SFUFuturaBold"), url(../../assets/fonts/SFU/SFUFuturaBold.TTF) format("woff");
+}
+@font-face {
+  font-family: "SFUFuturaRegular";
+  src: local("SFUFuturaRegular"), url(../../assets/fonts/SFU/SFUFuturaRegular.TTF) format("woff");
+}
+@font-face {
+  font-family: "MontserratRegular";
+  src: local("MontserratRegular"), url(../../assets/fonts/Montserrat/Montserrat-Regular.ttf) format("woff");
+}
+@font-face {
+  font-family: "MontserratBold";
+  src: local("MontserratBold"), url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf) format("woff");
 }

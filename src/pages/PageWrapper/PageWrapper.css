@@ -32,11 +32,12 @@
     overflow-x: hidden;
     overflow-y: hidden;
     white-space: nowrap;
+    background-color: #EDEDED;
   }
 
   .page-container {
     width: 100vw;
-    height: 100vh;
+    height: auto;
   }
   #social-button {
     position: fixed;

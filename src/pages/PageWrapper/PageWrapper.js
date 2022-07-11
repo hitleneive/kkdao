@@ -31,8 +31,22 @@ const PageWrapper = () => {
 
   const wrapRef = useRef(null);
 
-  const isSmallDesktop = window.innerWidth >= 768 && window.innerWidth < 1000;
-  const isMobile = window.innerWidth < 768;
+  const [widthScreen, setWidthScreen] = useState(0);
+
+  const isSmallDesktop = widthScreen >= 768 && widthScreen < 1000;
+  const isMobile = widthScreen < 768;
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setWidthScreen(window.innerWidth);
+    });
+
+    return () => {
+      window.removeEventListener("resize", () => {
+        setWidthScreen(window.innerWidth);
+      });
+    };
+  }, []);
 
   useEffect(() => {
     if (wrapRef.current) {

@@ -39,6 +39,10 @@ function LandingPage({ onFinished }) {
       document.getElementById("intro-video-zoom").play();
       // setTimeout(() => hideContent(true), 100);
     }
+    document.querySelector("#identifier canvas")?.setAttribute("width", "1920");
+    document
+      .querySelector("#identifier canvas")
+      ?.setAttribute("height", "1080");
   }, [stage]);
 
   return (
@@ -95,8 +99,8 @@ function LandingPage({ onFinished }) {
         <div id="intro-center-rock">
           <Image360Viewer
             amount={100}
-            imagePath="/images/intro-rock-500x700"
-            fileName="500x700 Da tach nen_000{index}.png"
+            imagePath="/images/intro-rock-1920x1080"
+            fileName="da-tach-nen_000{index}.png"
             start={50}
           />
         </div>

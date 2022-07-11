@@ -85,7 +85,7 @@
   width: 75%;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 999px) {
   .focusPage {
     height: auto;
     padding: 100px 0;

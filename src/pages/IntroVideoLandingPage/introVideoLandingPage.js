@@ -7,10 +7,7 @@ import Image360Viewer from "../../components/Image360Viewer";
 import SocialButtons from "../../components/SocialButtons";
 import "./introVideoLandingPage.css";
 
-function LandingPage({ onFinished }) {
-  const isSmallDesktop = window.innerWidth >= 768 && window.innerWidth <= 1440;
-  const isMobile = window.innerWidth < 768;
-
+function LandingPage({ onFinished, isSmallDesktop, isMobile }) {
   const [renderText, setRenderText] = useState(false);
   const [coord, setCoord] = useState({ x: 0, y: 0 });
   const [currentImage, setCurrentImage] = useState(50);

@@ -31,20 +31,20 @@ const PageWrapper = () => {
 
   const wrapRef = useRef(null);
 
-  const [widthScreen, setWidthScreen] = useState(0);
+  const [widthScreen, setWidthScreen] = useState(window.innerWidth);
 
   const isSmallDesktop = widthScreen >= 768 && widthScreen < 1000;
   const isMobile = widthScreen < 768;
 
+  const handleResize = () => {
+    setWidthScreen(window.innerWidth);
+  };
+
   useEffect(() => {
-    window.addEventListener("resize", () => {
-      setWidthScreen(window.innerWidth);
-    });
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener("resize", () => {
-        setWidthScreen(window.innerWidth);
-      });
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -92,7 +92,13 @@ const PageWrapper = () => {
   if (currentPage === 0) {
     return <Loading onFinished={() => setCurrentPage(1)} />;
   } else if (currentPage === 1) {
-    return <LandingPage onFinished={() => setCurrentPage(2)} />;
+    return (
+      <LandingPage
+        onFinished={() => setCurrentPage(2)}
+        isSmallDesktop={isSmallDesktop}
+        isMobile={isMobile}
+      />
+    );
   } else {
     return (
       <div>

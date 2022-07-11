@@ -107,29 +107,26 @@
 .logo {
   display: flex;
   flex-direction: row;
-  width: 100vw;
-  z-index: 100;
   justify-content: space-between;
+  align-items: center;
+  z-index: 100;
   z-index: 2;
+  padding: 20px;
 }
 
 .kklogo {
-  margin-top: 20px;
-  margin-left: 20px;
   z-index: 2;
 }
 
 .emailTwitter {
-  margin-top: 20px;
-  margin-right: 20px;
   z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .emailLogo {
-  /* margin-bottom: 10px; */
   width: 45%;
-  /* height: 77px; */
-  margin-bottom: 5%;
 }
 
 .twitterLogo {
@@ -237,11 +234,6 @@
   #intro-center-rock-background {
     overflow: hidden;
   }
-  .emailTwitter {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-  }
   .emailLogo {
     margin-bottom: 0;
   }
@@ -305,6 +297,9 @@
   #intro-center-rock .v360-viewport-container.v360-viewport {
     top: -12px;
     left: 9px;
+  }
+  .logo {
+    padding: 12px;
   }
 }
 

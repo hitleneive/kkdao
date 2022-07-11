@@ -4,24 +4,9 @@ import TwitterLogo from "../assets/Frame 2530.svg";
 const SocialButtons = ({ leftIcon }) => {
   return (
     <div>
-      <div
-        className="logo"
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          width: "100vw",
-          zIndex: "20",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
+      <div className="logo">
         {leftIcon}
-        <div
-          className="emailTwitter"
-          style={{
-            marginBottom: "15px",
-          }}
-        >
+        <div className="emailTwitter">
           <img
             src={EmailLogo}
             alt="EmailLogo"

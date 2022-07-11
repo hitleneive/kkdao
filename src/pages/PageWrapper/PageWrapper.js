@@ -1,19 +1,20 @@
 import { useEffect, useState } from "react";
+import BackButton from "../../assets/back-button.svg";
+import SocialButtons from "../../components/SocialButtons";
 import About from "../About/About";
 import FocusPage from "../Focus/focus";
 import Investor from "../Investor/Investor";
-import SignUp from "../SignUp/SignUp";
 import Loading from "../Loading/loading";
-import SocialButtons from "../../components/SocialButtons";
-import BackButton from "../../assets/back-button.svg";
+import SignUp from "../SignUp/SignUp";
 
-import "./PageWrapper.css";
 import LandingPage from "../IntroVideoLandingPage/introVideoLandingPage";
+import "./PageWrapper.css";
 
 import { useRef } from "react";
-import { useHorizontalScroll } from "./../../components/useHorizontal";
 import TrackVisibility from "react-on-screen";
-import { useScrollHorizontal } from "../../components/ScrollPage";
+import Footer from "../Footer";
+import ToTop from "../ToTop";
+import { useHorizontalScroll } from "./../../components/useHorizontal";
 
 // const InvestorPage = (props) => {
 //   return <Investor {...props} />;
@@ -109,6 +110,8 @@ const PageWrapper = () => {
           <div className="page-container" ref={pageRefs[2].ref}>
             <SignUp isSmallDesktop={isSmallDesktop} isMobile={isMobile} />
           </div>
+          {(isSmallDesktop || isMobile) && <Footer />}
+          {(isSmallDesktop || isMobile) && <ToTop />}
         </div>
       </div>
     );

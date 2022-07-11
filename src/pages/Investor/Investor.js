@@ -152,8 +152,8 @@ const Investor = ({ goToSignUp, isSmallDesktop, isMobile }) => {
       // }}
     >
       <div id="investor-rocks-layer">
-        <img src={Rock4} alt="Rock4" id="investor-rock4" />
-        <img src={Rock5} alt="Rock5" id="investor-rock5" />
+        {!isMobile && <img src={Rock4} alt="Rock4" id="investor-rock4" />}
+        {!isMobile && <img src={Rock5} alt="Rock5" id="investor-rock5" />}
       </div>
       {!(isSmallDesktop || isMobile) && (
         <video

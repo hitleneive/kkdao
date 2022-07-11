@@ -24,11 +24,41 @@
   justify-content: space-between;
 }
 
-#investor-rock4 {
-  width: 20%;
-  margin-left: -10%;
-  margin-top: -10%;
-  animation: investor-rock4-animation 4s infinite linear both;
+@media screen and (min-width: 1000px) {
+  #investor-rock4 {
+    width: 20%;
+    margin-left: -10%;
+    margin-top: -10%;
+    animation: investor-rock4-animation 4s infinite linear both;
+  }
+  #investor-rock5 {
+    width: 10%;
+    height: 10%;
+    margin-right: -10%;
+    margin-top: -5%;
+    animation: investor-rock5-animation 6s infinite linear alternate;
+  }
+}
+
+@media screen and (max-width: 999px) {
+  #investor-rock4 {
+    transform: rotate(-113deg);
+    position: absolute;
+    right: -32vw;
+    width: 50vw;
+    top: -83vw;
+    animation: investor-rock4-animation 4s infinite linear both;
+  }
+  #investor-rock5 {
+    position: absolute;
+    bottom: -12vw;
+    width: 16vw;
+    left: -7vw;
+    animation: investor-rock5-animation 6s infinite linear alternate;
+  }
+  #investor-rocks-layer {
+    position: initial;
+  }
 }
 
 @keyframes investor-rock4-animation {
@@ -38,14 +68,6 @@
   to {
     transform: rotate(360deg) translate(-0%, -10%) rotate(-360deg);
   }
-}
-
-#investor-rock5 {
-  width: 10%;
-  height: 10%;
-  margin-right: -10%;
-  margin-top: -5%;
-  animation: investor-rock5-animation 6s infinite linear alternate;
 }
 
 @keyframes investor-rock5-animation {

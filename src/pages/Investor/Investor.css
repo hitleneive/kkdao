@@ -1,6 +1,5 @@
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
-
 #investor-root-container {
   /* background-image: url("../../assets/investor-bg.svg");
   background-size: contain;
@@ -11,7 +10,6 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-
   display: inline-block;
   position: relative;
   background: #ededed;
@@ -19,7 +17,6 @@
 
 #investor-rocks-layer {
   z-index: 2;
-
   position: absolute;
   width: 100%;
   display: flex;
@@ -48,7 +45,6 @@
   height: 10%;
   margin-right: -10%;
   margin-top: -5%;
-
   animation: investor-rock5-animation 6s infinite linear alternate;
 }
 
@@ -66,7 +62,6 @@
   z-index: 2;
   width: 100%;
   height: 100%;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -94,7 +89,6 @@
   position: absolute;
   bottom: 0;
   margin: 0 auto;
-
   font-style: normal;
   font-weight: 400;
   font-size: 12vh;
@@ -102,13 +96,7 @@
   text-align: center;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  background: linear-gradient(
-    75.27deg,
-    #7c7d7f -24.99%,
-    #c3c4c6 14.72%,
-    #9ea0a3 57.04%,
-    #cbccce 100%
-  );
+  background: linear-gradient( 75.27deg, #7c7d7f -24.99%, #c3c4c6 14.72%, #9ea0a3 57.04%, #cbccce 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -126,7 +114,7 @@
   z-index: 1;
 }
 
-.carousel {
+#investor-root-container .carousel {
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -137,24 +125,24 @@
   height: 570px;
 }
 
-.slide img {
+#investor-root-container .slick-slide img {
   width: 20vw;
   /* object-fit: cover; */
   margin: 0 auto;
 }
 
-.slide {
+#investor-root-container .slick-slide {
   transform: scale(0.5);
   transition: transform 300ms;
   opacity: 0.5;
 }
 
-.activeSlide {
+#investor-root-container .slick-slide.slick-current {
   transform: scale(0.9);
   opacity: 1;
 }
 
-.activeSlide .animate {
+#investor-root-container .slick-slide.slick-current .animate {
   animation: rotateY-anim 0.25s 5;
   transform-origin: center;
   transition: transform 300ms;
@@ -165,11 +153,66 @@ slick-arrow.slick-next::before {
   display: none;
 }
 
+@media screen and (max-width: 1000px) {
+  #investor-root-container {
+    height: auto;
+  }
+  .bgInvestor {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: -1;
+  }
+  #largeTitle {
+    position: relative;
+    white-space: break-spaces;
+    font-size: 11.7vw;
+    margin-bottom: 16vw;
+  }
+  #investor-root-container .carousel {
+    height: auto;
+    margin-top: 0;
+  }
+  #infoContainer {
+    position: relative;
+  }
+  #titleText {
+    font-size: 21px;
+    margin-top: 16vw;
+  }
+  #subtitleText {
+    max-width: 475px;
+    width: auto;
+    line-height: 160%;
+    padding: 0 5%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #largeTitle {
+    margin-bottom: 20vw;
+  }
+  #titleText {
+    margin-top: 26vw;
+  }
+  #investor-root-container .carousel {
+    width: 100%;
+    margin: 0;
+  }
+  #investor-root-container .slick-slide img {
+    width: 30vw;
+  }
+  .bgInvestor {
+    width: 150%;
+    top: -22vw;
+  }
+}
+
 @keyframes rotateY-anim {
   0% {
     transform: rotateY(0deg);
   }
-
   100% {
     transform: rotateY(360deg);
   }
@@ -180,27 +223,24 @@ slick-arrow.slick-next::before {
     -webkit-transform: rotateY(0deg);
   }
 }
+
 @keyframes rotateY {
   to {
     transform: rotateY(306deg);
   }
 }
 
-
 @font-face {
   font-family: "SFUFuturaBold";
-  src: local("SFUFuturaBold"),
-    url(../../assets/fonts/SFU/SFUFuturaBold.TTF) format("woff");
+  src: local("SFUFuturaBold"), url(../../assets/fonts/SFU/SFUFuturaBold.TTF) format("woff");
 }
 
 @font-face {
   font-family: "SFUFuturaRegular";
-  src: local("SFUFuturaRegular"),
-    url(../../assets/fonts/SFU/SFUFuturaRegular.TTF) format("woff");
+  src: local("SFUFuturaRegular"), url(../../assets/fonts/SFU/SFUFuturaRegular.TTF) format("woff");
 }
 
 @font-face {
   font-family: "MontserratRegular";
-  src: local("MontserratRegular"),
-    url(../../assets/fonts/Montserrat/Montserrat-Regular.ttf) format("woff");
+  src: local("MontserratRegular"), url(../../assets/fonts/Montserrat/Montserrat-Regular.ttf) format("woff");
 }

@@ -15,11 +15,9 @@ import { useHorizontalScroll } from "./../../components/useHorizontal";
 import TrackVisibility from "react-on-screen";
 import { useScrollHorizontal } from "../../components/ScrollPage";
 
-const InvestorPage = ({ isVisible }) => {
-  console.log(isVisible);
-
-  return <Investor />;
-};
+// const InvestorPage = (props) => {
+//   return <Investor {...props} />;
+// };
 
 const PageWrapper = () => {
   // const scrollRef = useHorizontalScroll();
@@ -32,7 +30,7 @@ const PageWrapper = () => {
 
   const wrapRef = useRef(null);
 
-  const isSmallDesktop = window.innerWidth >= 768 && window.innerWidth <= 1000;
+  const isSmallDesktop = window.innerWidth >= 768 && window.innerWidth < 1000;
   const isMobile = window.innerWidth < 768;
 
   useEffect(() => {
@@ -105,7 +103,7 @@ const PageWrapper = () => {
           </div>
 
           <TrackVisibility className="page-container" ref={pageRefs[1].ref}>
-            <InvestorPage />
+            <Investor isSmallDesktop={isSmallDesktop} isMobile={isMobile} />
           </TrackVisibility>
 
           <div className="page-container" ref={pageRefs[2].ref}>

@@ -226,14 +226,14 @@
     height: auto;
     width: 100vw;
     position: relative;
-    background-image: url("../../assets/signup-bg.svg");
+    background-image: url("../../assets/resources/mobile/signup-bg.svg");
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px 0;
+    padding: 100px 0 40px;
   }
   #sign-up-rocks-layer {
     width: 100vw;
@@ -407,5 +407,18 @@
   @font-face {
     font-family: "MontserratRegular";
     src: local("MontserratRegular"), url(../../assets/fonts/Montserrat/Montserrat-Regular.ttf) format("woff");
+  }
+}
+
+@media screen and (max-width: 999px) {
+  #sign-up-root-container {
+    background-image: none
+  }
+  #formControl {
+    width: 90%;
+    margin-bottom: 6%;
+  }
+  #formContainer {
+    width: 90%;
   }
 }

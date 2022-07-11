@@ -136,10 +136,10 @@
   .buc {
     margin: auto;
     display: block;
-    top: -100px;
+    top: -130px;
     z-index: 0;
     position: relative;
-    margin-bottom: -100px;
+    margin-bottom: -110px;
     width: 100%;
   }
   .slick-slider .slick-slide:not(.slick-current) .img {
@@ -149,7 +149,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 8px;
+    margin-top: 20px;
   }
   .arrow {
     transition: all 0.3s ease;
@@ -182,6 +182,12 @@
     font-size: 49.7129px;
   }
   .totalNumber {}
+}
+
+@media screen and (max-width: 767px) {
+  .buc {
+    top: -100px;
+  }
 }
 
 @font-face {

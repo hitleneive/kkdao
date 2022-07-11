@@ -112,8 +112,8 @@ const Form = ({ setIsShowingForm, isSmallDesktop, isMobile }) => {
       <form id="formControl" onSubmit={handleSubmit}>
         <br />
         <h1 id="formTitle">SIGN UP</h1>
-        <br />
-        <br />
+        {!(isSmallDesktop || isMobile) && <br />}
+        {!(isSmallDesktop || isMobile) && <br />}
         <br id="form-input-spacing" />
 
         <input

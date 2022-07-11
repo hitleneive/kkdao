@@ -420,9 +420,10 @@
   }
 }
 
-@media screen and (max-width: 999px) {
+@media screen and (max-width: 767px) {
   #sign-up-root-container {
-    background-image: none
+    background-image: none;
+    padding: 30vw 0 8vw;
   }
   #formControl {
     width: 90%;
@@ -430,5 +431,20 @@
   }
   #formContainer {
     width: 90%;
+  }
+  #signup-rock5 {
+    margin-left: -13vw;
+    width: 28%;
+    top: 11vw;
+  }
+  #signup-rock7 {
+    left: 88vw;
+    top: -163vw;
+    width: 19%;
+  }
+  #signup-rock9 {
+    left: 45vw;
+    top: 23vw;
+    width: 18%;
   }
 }

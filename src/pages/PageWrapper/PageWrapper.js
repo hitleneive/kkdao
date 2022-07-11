@@ -107,7 +107,7 @@ const PageWrapper = () => {
           </TrackVisibility>
 
           <div className="page-container" ref={pageRefs[2].ref}>
-            <SignUp />
+            <SignUp isSmallDesktop={isSmallDesktop} isMobile={isMobile} />
           </div>
         </div>
       </div>

@@ -4,36 +4,28 @@
     right: 0;
     bottom: 0;
     left: 0;
-
     height: 100vh;
     width: 100vw;
     position: relative;
-
     background-image: url("../../assets/signup-bg.svg");
     background-size: cover;
     background-repeat: no-repeat;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-
   #sign-up-rocks-layer {
     width: 100vw;
     height: 100vh;
   }
-
   #signup-rock5 {
     display: none;
-
     margin-left: 5vw;
     position: absolute;
     width: 10%;
-
     animation: rock5Animation 4s infinite linear alternate;
   }
-
   @keyframes rock5Animation {
     from {
       transform: translateY(-20%) rotate(0deg) translateX(10%) rotate(0deg);
@@ -42,16 +34,13 @@
       transform: translateX(-50%) rotate(360deg) translateX(10%) rotate(-360deg);
     }
   }
-
   #signup-rock6 {
     bottom: 10vh;
     left: 20vw;
     position: absolute;
     width: 5%;
-
     animation: rock6Animation 4s infinite linear both;
   }
-
   @keyframes rock6Animation {
     from {
       transform: rotate(0deg) translateX(10%) rotate(0deg);
@@ -60,7 +49,6 @@
       transform: rotate(360deg) translateX(10%) rotate(-360deg);
     }
   }
-
   #signup-rock7 {
     margin-left: auto;
     margin-right: auto;
@@ -69,10 +57,8 @@
     top: 20vh;
     position: absolute;
     width: 5%;
-
     animation: rock7Animation 3s infinite linear forwards;
   }
-
   @keyframes rock7Animation {
     from {
       transform: rotate(0deg);
@@ -81,7 +67,6 @@
       transform: rotate(360deg);
     }
   }
-
   #signUpWrapper {
     position: absolute;
     bottom: 5vh;
@@ -89,7 +74,6 @@
     margin-left: 5vw;
     margin-bottom: 5%;
   }
-
   #signup {
     text-align: center;
     line-height: 100%;
@@ -102,26 +86,18 @@
     text-decoration-skip-ink: none;
     margin-bottom: 0;
     font-family: SFUFuturaRegular;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  background: linear-gradient(
-    75.27deg,
-    #7c7d7f -24.99%,
-    #c3c4c6 14.72%,
-    #9ea0a3 57.04%,
-    #cbccce 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    background: linear-gradient( 75.27deg, #7c7d7f -24.99%, #c3c4c6 14.72%, #9ea0a3 57.04%, #cbccce 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
-
-  #sign-up-bottom-line{
+  #sign-up-bottom-line {
     border-top: 0px;
     height: 10px;
     /* display: none; */
   }
-
   #signup::before {
     margin-top: 2%;
     content: "";
@@ -133,14 +109,12 @@
     border-radius: 2px;
     background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, #000000 47.92%, rgba(0, 0, 0, 0) 100%);
   }
-
   #formParentLayout {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
   }
-
   #formContainer {
     align-self: center;
     position: absolute;
@@ -149,13 +123,11 @@
     border-radius: 16px;
     backdrop-filter: blur(6px);
     z-index: 2;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-
   #close {
     position: absolute;
     width: 2%;
@@ -164,7 +136,6 @@
     right: 0;
     top: 0;
   }
-
   #formControl {
     width: 100%;
     justify-items: baseline;
@@ -172,16 +143,9 @@
     margin-bottom: 2%;
     flex-direction: column;
   }
-
   #formTitle {
     text-align: center;
-    background: linear-gradient(
-      75.27deg,
-      #7c7d7f -24.99%,
-      #c3c4c6 14.72%,
-      #9ea0a3 57.04%,
-      #cbccce 100%
-    );
+    background: linear-gradient( 75.27deg, #7c7d7f -24.99%, #c3c4c6 14.72%, #9ea0a3 57.04%, #cbccce 100%);
     font-size: 13vh;
     margin: 0 auto;
     letter-spacing: 10px;
@@ -194,47 +158,39 @@
     font-weight: 400;
     width: 100%;
   }
-
   #additionalInfoContainer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin: 0 2%;
   }
-
   .formInput {
     min-width: 0;
     min-height: 0;
     background: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 8px;
-
     padding-top: 2%;
     padding-bottom: 2%;
     outline: rgba(0, 0, 0, 0.15);
   }
-
   #projectDescriptionInput {
     resize: none;
     margin: 0 2%;
     font-family: inherit;
     padding: 2% 2%;
   }
-
   .horizontalInput {
     padding-left: 2%;
     width: 30%;
   }
-
   #form-input-spacing {
     display: none;
   }
-
   .verticalInput {
     padding: 2% 2%;
     margin: 0 2%;
   }
-
   #sendBtn {
     background: #ffd953;
     border-radius: 16px;
@@ -244,66 +200,52 @@
     letter-spacing: 2px;
     border: none;
   }
-
   #sendBtn:hover {
-    box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.4),
-      3px 3px 6px rgba(105, 129, 162, 0.2);
+    box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.4), 3px 3px 6px rgba(105, 129, 162, 0.2);
   }
-
   @font-face {
     font-family: "SFUFuturaBold";
-    src: local("SFUFuturaBold"),
-      url(../../assets/fonts/SFU/SFUFuturaBold.TTF) format("woff");
+    src: local("SFUFuturaBold"), url(../../assets/fonts/SFU/SFUFuturaBold.TTF) format("woff");
   }
-
   @font-face {
     font-family: "SFUFuturaRegular";
-    src: local("SFUFuturaRegular"),
-      url(../../assets/fonts/SFU/SFUFuturaRegular.TTF) format("woff");
+    src: local("SFUFuturaRegular"), url(../../assets/fonts/SFU/SFUFuturaRegular.TTF) format("woff");
   }
-
   @font-face {
     font-family: "MontserratRegular";
-    src: local("MontserratRegular"),
-      url(../../assets/fonts/Montserrat/Montserrat-Regular.ttf) format("woff");
+    src: local("MontserratRegular"), url(../../assets/fonts/Montserrat/Montserrat-Regular.ttf) format("woff");
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 999px) {
   #sign-up-root-container {
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-
-    height: 100vh;
+    height: auto;
     width: 100vw;
     position: relative;
-
     background-image: url("../../assets/signup-bg.svg");
     background-size: cover;
     background-repeat: no-repeat;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 40px 0;
   }
-
   #sign-up-rocks-layer {
     width: 100vw;
-    height: 100vh;
+    height: auto;
     z-index: 0;
   }
-
   #signup-rock5 {
     margin-left: 5vw;
     position: absolute;
     width: 20%;
-
     animation: rock5Animation 4s infinite linear alternate;
   }
-
   @keyframes rock5Animation {
     from {
       transform: translateY(-20%) rotate(0deg) translateX(10%) rotate(0deg);
@@ -312,16 +254,13 @@
       transform: translateX(-50%) rotate(360deg) translateX(10%) rotate(-360deg);
     }
   }
-
   #signup-rock6 {
     bottom: 10vh;
     left: 20vw;
     position: absolute;
     width: 5%;
-
     animation: rock6Animation 2s infinite linear both;
   }
-
   @keyframes rock6Animation {
     from {
       transform: rotate(0deg) translateX(50%) rotate(0deg);
@@ -330,7 +269,6 @@
       transform: rotate(360deg) translateX(50%) rotate(-360deg);
     }
   }
-
   #signup-rock7 {
     margin-left: auto;
     margin-right: auto;
@@ -339,10 +277,8 @@
     top: 10vh;
     position: absolute;
     width: 20%;
-
     animation: rock7Animation 3s infinite linear alternate;
   }
-
   @keyframes rock7Animation {
     from {
       transform: rotate(0deg);
@@ -351,15 +287,12 @@
       transform: rotate(180deg);
     }
   }
-
   #signUpWrapper {
     position: absolute;
     bottom: 5vh;
     margin-left: 5vw;
   }
-
   #signup {
-    display: none;
     text-align: center;
     line-height: 100%;
     font-size: 40px;
@@ -370,29 +303,24 @@
     /* text-decoration-color: red; */
     font-style: normal;
   }
-
   #formParentLayout {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
   }
-
   #formContainer {
     align-self: center;
-    position: absolute;
     background: rgba(255, 255, 255, 0.49);
     border-radius: 16px;
     backdrop-filter: blur(6px);
     z-index: 2;
-    width: 100vw;
-
+    width: 96%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-
   #close {
     position: absolute;
     width: 8%;
@@ -401,108 +329,83 @@
     right: 0;
     top: 0;
   }
-
   #formControl {
     width: 96%;
     justify-items: baseline;
     display: flex;
-
     margin-bottom: 2%;
-
     flex-direction: column;
   }
-
   #formTitle {
     text-align: center;
-    background: linear-gradient(
-      75.27deg,
-      #7c7d7f -24.99%,
-      #c3c4c6 14.72%,
-      #9ea0a3 57.04%,
-      #cbccce 100%
-    );
+    background: linear-gradient( 75.27deg, #7c7d7f -24.99%, #c3c4c6 14.72%, #9ea0a3 57.04%, #cbccce 100%);
     font-size: 60px;
     margin: 0 auto;
     letter-spacing: 10px;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    font-weight: 400;
   }
-
   #additionalInfoContainer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
-
   .formInput {
     min-width: 0;
     min-height: 0;
     background: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 8px;
-
     outline: rgba(0, 0, 0, 0.15);
   }
-
   .formInput::placeholder {
     color: #555555;
     font-weight: bold;
   }
-
   .formInput:-ms-input-placeholder {
     color: #555555;
     font-weight: bold;
   }
-
   .formInput:-moz-placeholder {
     color: #555555;
     font-weight: bold;
   }
-
   #projectDescriptionInput {
     resize: none;
     font-family: inherit;
-    padding: 4% 4%;
+    padding: 12px;
   }
-
-  .horizontalInput {
-    padding: 4% 4%;
+  .horizontalInput[type="text"] {
+    padding: 12px;
+    font-size: 14px;
   }
-
-  .verticalInput {
-    padding: 4% 4%;
+  .verticalInput[type="text"] {
+    padding: 12px;
+    font-size: 14px;
   }
-
   #sendBtn {
     background: #ffd953;
     border-radius: 16px;
-    padding: 4% 4%;
+    padding: 20px;
     font-weight: bold;
     letter-spacing: 2px;
     border: none;
   }
-
   #sendBtn:hover {
-    box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.4),
-      3px 3px 6px rgba(105, 129, 162, 0.2);
+    box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.4), 3px 3px 6px rgba(105, 129, 162, 0.2);
   }
-
   @font-face {
     font-family: "SFUFuturaBold";
-    src: local("SFUFuturaBold"),
-      url(../../assets/fonts/SFU/SFUFuturaBold.TTF) format("woff");
+    src: local("SFUFuturaBold"), url(../../assets/fonts/SFU/SFUFuturaBold.TTF) format("woff");
   }
-
   @font-face {
     font-family: "SFUFuturaRegular";
-    src: local("SFUFuturaRegular"),
-      url(../../assets/fonts/SFU/SFUFuturaRegular.TTF) format("woff");
+    src: local("SFUFuturaRegular"), url(../../assets/fonts/SFU/SFUFuturaRegular.TTF) format("woff");
   }
-
   @font-face {
     font-family: "MontserratRegular";
-    src: local("MontserratRegular"),
-      url(../../assets/fonts/Montserrat/Montserrat-Regular.ttf) format("woff");
+    src: local("MontserratRegular"), url(../../assets/fonts/Montserrat/Montserrat-Regular.ttf) format("woff");
   }
 }

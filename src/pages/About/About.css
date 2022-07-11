@@ -201,6 +201,7 @@
     margin-right: 10vw;
     line-height: 1;
     letter-spacing: 0.2em;
+    margin-bottom: 1vh;
   }
   #subtitleContainer {
     white-space: normal;
@@ -305,11 +306,11 @@
 
 @media screen and (max-width: 767px) {
   .about-root-container {
-    background-image: url("../../assets/resources/mobile/about-bg.svg");
+    background-image: url("../../assets/resources/mobile/about-bg-sp.svg");
   }
   #title {
     margin-left: 0;
-    margin-top: 24vh;
+    margin-top: 30vh;
   }
   #subtitle {
     margin-left: 0;
@@ -331,11 +332,11 @@
   }
   #about-rock2 {
     width: 13vw;
-    top: 68vh;
+    top: 73vh;
     right: 17vw;
   }
   #about-rock3 {
-    top: -5vh;
+    top: 2vh;
     right: 78vw;
     width: 5vw;
     height: 5vw;

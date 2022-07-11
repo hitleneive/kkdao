@@ -96,6 +96,7 @@
     width: 100%;
     display: block;
     text-align: center;
+    margin-bottom: 4vw;
   }
   .slideWrapper {
     max-width: 480px;
@@ -152,6 +153,7 @@
   }
   .arrow:hover svg path {
     stroke: #FFD953;
+    transition: all 0.3s ease;
   }
   .arrowPrev {}
   .arrowNext {

@@ -21,7 +21,7 @@ const SignUp = ({ isSmallDesktop, isMobile }) => {
         {!isSmallDesktop && <img src={Rock5} alt="Rock5" id="signup-rock5" />}
         <img src={Rock6} alt="Rock6" id="signup-rock6" />
         <img src={Rock7} alt="Rock7" id="signup-rock7" />
-        <img src={Rock7} alt="Rock9" id="signup-rock9" />
+        {isSmallDesktop && <img src={Rock7} alt="Rock9" id="signup-rock9" />}
       </div>
       {isShowingForm ? (
         <Form

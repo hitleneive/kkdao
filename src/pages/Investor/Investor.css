@@ -113,10 +113,11 @@
   margin: 0 auto;
   font-style: normal;
   font-weight: 400;
-  font-size: 12vh;
+  /* font-size: 12vh; */
+  font-size: calc(8vw - 20px);
   font-family: SFUFuturaRegular;
   text-align: center;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   background: linear-gradient( 75.27deg, #7c7d7f -24.99%, #c3c4c6 14.72%, #9ea0a3 57.04%, #cbccce 100%);
   -webkit-background-clip: text;

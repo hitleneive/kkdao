@@ -213,7 +213,7 @@ slick-arrow.slick-next::before {
 
 @media screen and (max-width: 767px) {
   #largeTitle {
-    margin-bottom: 20vw;
+    margin-bottom: 4vw;
   }
   #titleText {
     margin-top: 26vw;

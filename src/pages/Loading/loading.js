@@ -10,9 +10,9 @@ function Loading({ onFinished }) {
   useEffect(() => {
     const timerId = setTimeout(() => {
       setValue(value + 1);
-    }, 50);
+    }, 20);
 
-    if (value === 100) {
+    if (value >= 100) {
       clearTimeout(timerId);
       onFinished();
     }
@@ -30,7 +30,7 @@ function Loading({ onFinished }) {
     >
       <div>
         <CircularProgressbar
-          value={value}
+          value={value + 10}
           maxValue={100}
           text={value + "%"}
           styles={buildStyles({
@@ -38,7 +38,7 @@ function Loading({ onFinished }) {
             pathColor: "#9EA0A3",
             trailColor: "#000000 20%",
           })}
-          strokeWidth={3}
+          strokeWidth={1}
         />
       </div>
     </motion.div>

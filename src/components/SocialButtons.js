@@ -1,5 +1,5 @@
 import EmailLogo from "../assets/Frame 2529.svg";
-import TwitterLogo from "../assets/Frame 2530.svg";
+import TwitterLogo from "../assets/twitter.svg";
 
 const SocialButtons = ({ leftIcon }) => {
   return (
@@ -7,25 +7,21 @@ const SocialButtons = ({ leftIcon }) => {
       <div className="logo">
         {leftIcon}
         <div className="emailTwitter">
-          <img
-            src={EmailLogo}
-            alt="EmailLogo"
+          <a
             className="emailLogo"
-            onClick={() => {
-              window.open("mailto:info@kkfund.co?subject=Register");
-            }}
-            style={{
-              width: "35%",
-            }}
-          />
-          <img
-            src={TwitterLogo}
-            alt="TwitterLogo"
-            className="twitterLogo"
-            style={{
-              width: "45%",
-            }}
-          />
+            href="mailto:info@kkfund.co?subject=Register"
+          >
+            <img src={EmailLogo} alt="EmailLogo" height={52} width={52} />
+          </a>
+          <a href="#">
+            <img
+              src={TwitterLogo}
+              alt="TwitterLogo"
+              className="twitterLogo"
+              height={52}
+              width={52}
+            />
+          </a>
         </div>
       </div>
     </div>

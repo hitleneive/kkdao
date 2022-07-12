@@ -112,7 +112,7 @@ function LandingPage({ onFinished, isSmallDesktop, isMobile }) {
                 initial={{
                   opacity: 0,
                   y: 200,
-                  transitionDuration: "0.5s",
+                  transitionDuration: "1s",
                   transitionDelay: "0s",
                 }}
                 animate={{
@@ -136,7 +136,7 @@ function LandingPage({ onFinished, isSmallDesktop, isMobile }) {
                 initial={{
                   opacity: 0,
                   y: 100,
-                  transitionDuration: "0.5s",
+                  transitionDuration: "1s",
                   transitionDelay: "0s",
                 }}
                 animate={{
@@ -155,7 +155,7 @@ function LandingPage({ onFinished, isSmallDesktop, isMobile }) {
                   initial={{
                     opacity: 0,
                     transitionDelay: "0.2s",
-                    transitionDuration: "0.5s",
+                    transitionDuration: "1s",
                     y: 100,
                   }}
                   animate={{ opacity: 1, y: 0 }}
@@ -181,12 +181,9 @@ function LandingPage({ onFinished, isSmallDesktop, isMobile }) {
 }
 
 const Logo = () => (
-  <div
-    className="kklogo"
-    onClick={() => (window.location.href = "https://www.kkfund.co/")}
-  >
-    <img src={KKLogo} alt="KKLogo" style={{ width: "75%" }} />
-  </div>
+  <a className="kklogo" href="https://www.kkfund.co/" target="_blank"rel="noreferrer">
+    <img src={KKLogo} alt="KKLogo"/>
+  </a>
 );
 
 export default LandingPage;

@@ -1,3 +1,18 @@
 #App {
   height: 100vh;
 }
+
+.twitterLogo {
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: -4px -4px 4px rgb(255 255 255 / 25%),
+    3px 3px 5px rgb(105 129 162 / 16%);
+  margin-left: 12px;
+}
+
+.backIcon{
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: -4px -4px 4px rgb(255 255 255 / 25%),
+    3px 3px 5px rgb(105 129 162 / 16%);
+}

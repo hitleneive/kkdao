@@ -93,6 +93,9 @@ function LandingPage({ onFinished, isSmallDesktop, isMobile }) {
         id="intro-center-rock-background"
         className={`${stage == 2 ? "visible" : "invisible"}`}
       >
+        {/* {renderText && (
+          <div className="rock-block" onClick={() => setStage(3)}></div>
+        )} */}
         <div id="intro-center-rock">
           <Image360Viewer
             amount={100}

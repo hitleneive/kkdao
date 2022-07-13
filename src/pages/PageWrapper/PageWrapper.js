@@ -87,7 +87,7 @@ const PageWrapper = () => {
   // 0: Loading
   // 1: Video
   // 2: Landing Page
-  const [currentPage, setCurrentPage] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
 
   if (currentPage === 0) {
     return <Loading onFinished={() => setCurrentPage(1)} />;

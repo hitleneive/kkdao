@@ -77,12 +77,11 @@
   float: center;
   margin-left: 50%;
   top: 5px;
+  transition: 0.4s ease-out;
 }
 
 .daosImg:hover {
-  transform: translateY(-20px);
-  transition: 0.4s ease-out;
-  width: 75%;
+  transform: scale(1.1);
 }
 
 @media screen and (max-width: 999px) {

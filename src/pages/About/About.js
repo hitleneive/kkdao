@@ -21,28 +21,68 @@ const About = ({ goToFocus }) => {
       </div>
 
       <div id="introContainer">
-        <motion.h1
-          id="title"
-          initial={{
-            opacity: 0,
-            transitionDuration: "1s",
-          }}
-          transition={{ duration: 1 }}
-          animate={{
-            opacity: 1,
-          }}
-        >
-          ABOUT THE PROJECT
-        </motion.h1>
+        <div id="title">
+          <motion.p
+            id="title1"
+            initial={{
+              opacity: 0,
+              x: -30,
+              transitionDelay: "0s",
+              transitionDuration: "0.2s",
+              transitionTimingFunction: "easeOut",
+            }}
+            animate={{
+              opacity: 1,
+              x: 0,
+            }}
+          >
+            ABOUT
+          </motion.p>{" "}
+          <motion.p
+            id="title2"
+            initial={{
+              opacity: 0,
+              x: -30,
+              transitionDelay: "0.2s",
+              transitionDuration: "0.2s",
+              transitionTimingFunction: "easeOut",
+            }}
+            animate={{
+              opacity: 1,
+              x: 0,
+            }}
+          >
+            THE
+          </motion.p>{" "}
+          <motion.p
+            id="title3"
+            initial={{
+              opacity: 0,
+              x: -30,
+              transitionDelay: "0.4s",
+              transitionDuration: "0.2s",
+              transitionTimingFunction: "easeOut",
+            }}
+            animate={{
+              opacity: 1,
+              x: 0,
+            }}
+          >
+            PROJECT
+          </motion.p>
+        </div>
         <motion.div
           id="subtitleContainer"
           initial={{
             opacity: 0,
-            transitionDelay: "1.5s",
-            transitionDuration: "1s",
+            y: 50,
+            transitionDelay: "0.5s",
+            transitionDuration: "0.5s",
+            transitionTimingFunction: "easeOut",
           }}
           animate={{
             opacity: 1,
+            y: 0,
           }}
         >
           <p
@@ -71,11 +111,14 @@ const About = ({ goToFocus }) => {
             onClick={() => goToFocus()}
             initial={{
               opacity: 0,
-              transitionDelay: "2.5s",
-              transitionDuration: "1s",
+              y: 50,
+              transitionDelay: "0.8s",
+              transitionDuration: "0.5s",
+              transitionTimingFunction: "easeOut",
             }}
             animate={{
               opacity: 1,
+              y: 0,
             }}
           >
             <b>Share your innovation here!</b>

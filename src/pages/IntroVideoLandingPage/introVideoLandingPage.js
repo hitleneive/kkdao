@@ -64,13 +64,14 @@ function LandingPage({ onFinished, isSmallDesktop, isMobile }) {
         muted
         preload="auto"
         // className={`${stage === 0 ? "visible" : "invisible"}`}
-        onEnded={() => {
+        onPlay={() => {
           setStage(1);
-          setTimeout(() => {
+          const time = setInterval(() => {
             setStage(2);
             // setHideContent(false);
             setRenderText(true);
-          }, 100);
+            clearInterval(time);
+          }, 4000);
         }}
       >
         {stage === 0
@@ -111,15 +112,16 @@ function LandingPage({ onFinished, isSmallDesktop, isMobile }) {
                 className="title"
                 initial={{
                   opacity: 0,
-                  y: 200,
-                  transitionDuration: "0.5s",
+                  y: 50,
+                  transitionDuration: "0.3s",
                   transitionDelay: "0s",
+                  transitionTimingFunction: "easeOut",
                 }}
                 animate={{
                   opacity: 1,
                   y: 0,
                 }}
-                exit={{ opacity: 0, y: 100 }}
+                exit={{ opacity: 0, transitionDuration: "0.5s" }}
               >
                 {isMobile || isSmallDesktop ? (
                   <>
@@ -128,24 +130,27 @@ function LandingPage({ onFinished, isSmallDesktop, isMobile }) {
                     <span>DAO</span>
                   </>
                 ) : (
-                  "KKDAO"
+                  <span>
+                    KKDA<span>O</span>
+                  </span>
                 )}
               </motion.h1>
               <motion.div
                 className="mainContent"
                 initial={{
                   opacity: 0,
-                  y: 100,
-                  transitionDuration: "0.5s",
-                  transitionDelay: "0s",
+                  y: 50,
+                  transitionDuration: "0.4s",
+                  transitionDelay: "0.2s",
+                  transitionTimingFunction: "easeOut",
                 }}
                 animate={{
                   opacity: 1,
                   y: 0,
                 }}
-                exit={{ opacity: 0, y: 100 }}
+                exit={{ opacity: 0, transitionDuration: "0.5s" }}
               >
-                <p>
+                <p className="introContent">
                   <b style={{ fontFamily: "SFUFutura" }}>FIRST DAO</b> RUN BY A
                   VC FIRM<br></br>IN{" "}
                   <b style={{ fontFamily: "SFUFutura" }}>SOUTHEAST ASIA</b>{" "}
@@ -154,12 +159,13 @@ function LandingPage({ onFinished, isSmallDesktop, isMobile }) {
                   className="wrapButton"
                   initial={{
                     opacity: 0,
-                    transitionDelay: "0.2s",
-                    transitionDuration: "0.5s",
-                    y: 100,
+                    y: 50,
+                    transitionDuration: "0.4s",
+                    transitionDelay: "0.4s",
+                    transitionTimingFunction: "easeOut",
                   }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 100 }}
+                  exit={{ opacity: 0, transitionDuration: "0.5s" }}
                 >
                   <button
                     id="button"

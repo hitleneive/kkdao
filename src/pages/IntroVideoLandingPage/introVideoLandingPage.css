@@ -139,13 +139,18 @@
 }
 
 .content {
-  bottom: 0;
-  left: 0;
   position: absolute;
-  width: 100vw;
-  flex-direction: column;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
   display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   z-index: 2;
+  max-width: 80%;
+  margin: auto;
+  padding-bottom: 7.8vh;
 }
 
 .rock-block {
@@ -164,17 +169,10 @@
   .title {
     z-index: 1;
     text-align: center;
-    width: 100vw;
-    padding-bottom: 150px;
     margin-top: 0;
     margin-bottom: 0;
     font-family: SFUFuturaBold;
-    font-size: 15vh;
-    /* background: linear-gradient(
-    0deg,
-    #ffffff 47.23%,
-    rgba(255, 255, 255, 0.5) 94.32%
-  ); */
+    font-size: 8vw;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -182,29 +180,34 @@
     text-shadow: -4px -4px 4px rgba(255, 255, 255, 0.4), 3px 3px 33px rgba(105, 129, 162, 0.2);
     letter-spacing: 1.165em;
     display: inline-block;
-    /* -webkit-text-stroke-width: 1px; */
-    /* -webkit-text-stroke-color: #444444; */
-    background: linear-gradient( 90deg, #ffffff 47.23%, rgba(255, 255, 255, 0.5) 94.32%);
+    background: linear-gradient(0deg, #FFFFFF 40%, rgba(255, 255, 255, 0.5) 94.32%);
     color: white;
     -webkit-text-stroke: 1px transparent;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #93939380;
+    text-align: center;
+    width: 100%;
   }
-  .title::first-letter {
-    margin-left: 1.165em;
+  .title span span {
+    letter-spacing: 0;
   }
 }
 
 .mainContent {
-  position: absolute;
-  right: 20%;
-  bottom: 15%;
-  display: flex;
-  flex-direction: column;
   font-weight: 400;
   font-style: normal;
   z-index: 2;
   text-transform: uppercase;
+  display: inline-block;
+}
+
+.introContent {
+  line-height: 207.92%;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.45vw;
 }
 
 .wrapButton {
@@ -218,6 +221,7 @@
   font-family: MontserratBold;
   z-index: 2;
   width: 8vw;
+  min-width: 150px;
   height: 6vh;
   background-color: #ffd953;
   border: none;

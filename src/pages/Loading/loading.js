@@ -10,7 +10,7 @@ function Loading({ onFinished }) {
   useEffect(() => {
     const timerId = setTimeout(() => {
       setValue(value + 1);
-    }, 20);
+    }, 30);
 
     if (value >= 100) {
       clearTimeout(timerId);

@@ -402,6 +402,7 @@
     font-weight: bold;
     letter-spacing: 2px;
     border: none;
+    min-height: 50px;
   }
   #sendBtn:hover {
     box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.4), 3px 3px 6px rgba(105, 129, 162, 0.2);

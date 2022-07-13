@@ -95,6 +95,7 @@ function LandingPage({
 
       <video
         // ref={zoomRef}
+        playsInline
         id="intro-video-zoom"
         src={ZoomVideo}
         muted

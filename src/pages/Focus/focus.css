@@ -171,14 +171,14 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
-    display: flex;
-    align-items: center;
   }
   .actionNumber {
     font-family: 'SFUFuturaRegular';
     font-size: 49.7129px;
   }
-  .totalNumber {}
+  .totalNumber {
+    vertical-align: super;
+  }
 }
 
 @media screen and (max-width: 767px) {

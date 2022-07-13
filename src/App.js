@@ -6,7 +6,7 @@ import AnimatedRoutes from "./components/animatedRoutes";
 function App() {
   return (
     <div className="App">
-      <Router>
+      <Router basename="/kkdao">
         <AnimatedRoutes />
       </Router>
     </div>

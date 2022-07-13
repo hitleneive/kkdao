@@ -42,17 +42,21 @@ const PageWrapper = () => {
     setWidthScreen(window.innerWidth);
   };
 
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-
+  useEffect(()=>{
     if (wrapRef.current) {
       wrapRef.current.addEventListener("wheel", (evt) => {
-        if (!(isMobile || isSmallDesktop)) {
+        if (!isMobile && !isSmallDesktop) {
           evt.preventDefault();
           wrapRef.current.scrollLeft += evt.deltaY;
         }
       });
     }
+  })
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+
+    
 
     return () => {
       window.removeEventListener("resize", handleResize);

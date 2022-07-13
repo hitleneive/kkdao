@@ -42,7 +42,7 @@ const PageWrapper = () => {
     setWidthScreen(window.innerWidth);
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     if (wrapRef.current) {
       wrapRef.current.addEventListener("wheel", (evt) => {
         if (!isMobile && !isSmallDesktop) {
@@ -51,12 +51,10 @@ const PageWrapper = () => {
         }
       });
     }
-  })
+  });
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
-
-    
 
     return () => {
       window.removeEventListener("resize", handleResize);

@@ -21,98 +21,63 @@ const About = ({ goToFocus }) => {
       </div>
 
       <div id="introContainer">
-        <div id="title">
-          <motion.p
-            id="title1"
-            initial={{
-              opacity: 0,
-              x: -30,
-              transitionDelay: "0s",
-              transitionDuration: "0.2s",
-              transitionTimingFunction: "easeOut",
-            }}
-            animate={{
-              opacity: 1,
-              x: 0,
-            }}
-          >
-            ABOUT
-          </motion.p>{" "}
-          <motion.p
-            id="title2"
-            initial={{
-              opacity: 0,
-              x: -30,
-              transitionDelay: "0.2s",
-              transitionDuration: "0.2s",
-              transitionTimingFunction: "easeOut",
-            }}
-            animate={{
-              opacity: 1,
-              x: 0,
-            }}
-          >
-            THE
-          </motion.p>{" "}
-          <motion.p
-            id="title3"
-            initial={{
-              opacity: 0,
-              x: -30,
-              transitionDelay: "0.4s",
-              transitionDuration: "0.2s",
-              transitionTimingFunction: "easeOut",
-            }}
-            animate={{
-              opacity: 1,
-              x: 0,
-            }}
-          >
-            PROJECT
-          </motion.p>
-        </div>
-        <motion.div
-          id="subtitleContainer"
-          initial={{
-            opacity: 0,
-            y: 50,
-            transitionDelay: "0.5s",
-            transitionDuration: "0.5s",
-            transitionTimingFunction: "easeOut",
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
-        >
-          <p
-            id="subtitle"
-            style={{
-              fontFamily: "MontserratRegular",
-            }}
-          >
-            <b
-              style={{
-                fontFamily: "MontserratBold",
-                fontWeight: "bold",
+        <div id="introContainerInner">
+          <div id="title">
+            <motion.p
+              id="title1"
+              initial={{
+                opacity: 0,
+                x: -30,
+                transitionDelay: "0s",
+                transitionDuration: "0.2s",
+                transitionTimingFunction: "easeOut",
+              }}
+              animate={{
+                opacity: 1,
+                x: 0,
               }}
             >
-              KK DAO is the first DAO run by a VC firm in Southeast Asia.
-            </b>{" "}
-            We believe that KK DAO can create opportunities for next generation
-            talent in Web 3.0 in developing countries, support the underserved
-            talent in emerging markets. We build, support, and invest in early
-            blockchain-agnostic startups in the area, DAOs, DeFi, CeFi
-            (centralized finance), Web3 Apps, Infrastructure, Wallet, Gaming,
-            and NFT.
-          </p>
-          <motion.button
-            id="shareInnovationBtn"
-            onClick={() => goToFocus()}
+              ABOUT
+            </motion.p>{" "}
+            <motion.p
+              id="title2"
+              initial={{
+                opacity: 0,
+                x: -30,
+                transitionDelay: "0.2s",
+                transitionDuration: "0.2s",
+                transitionTimingFunction: "easeOut",
+              }}
+              animate={{
+                opacity: 1,
+                x: 0,
+              }}
+            >
+              THE
+            </motion.p>{" "}
+            <motion.p
+              id="title3"
+              initial={{
+                opacity: 0,
+                x: -30,
+                transitionDelay: "0.4s",
+                transitionDuration: "0.2s",
+                transitionTimingFunction: "easeOut",
+              }}
+              animate={{
+                opacity: 1,
+                x: 0,
+              }}
+            >
+              TCEJORP
+            </motion.p>
+          </div>
+          <motion.div
+            id="subtitleContainer"
             initial={{
               opacity: 0,
               y: 50,
-              transitionDelay: "0.8s",
+              transitionDelay: "0.5s",
               transitionDuration: "0.5s",
               transitionTimingFunction: "easeOut",
             }}
@@ -121,9 +86,46 @@ const About = ({ goToFocus }) => {
               y: 0,
             }}
           >
-            <b>Share your innovation here!</b>
-          </motion.button>
-        </motion.div>
+            <p
+              id="subtitle"
+              style={{
+                fontFamily: "MontserratRegular",
+              }}
+            >
+              <b
+                style={{
+                  fontFamily: "MontserratBold",
+                  fontWeight: "bold",
+                }}
+              >
+                KK DAO is the first DAO run by a VC firm in Southeast Asia.
+              </b>{" "}
+              We believe that KK DAO can create opportunities for next
+              generation talent in Web 3.0 in developing countries, support the
+              underserved talent in emerging markets. We build, support, and
+              invest in early blockchain-agnostic startups in the area, DAOs,
+              DeFi, CeFi (centralized finance), Web3 Apps, Infrastructure,
+              Wallet, Gaming, and NFT.
+            </p>
+            <motion.button
+              id="shareInnovationBtn"
+              onClick={() => goToFocus()}
+              initial={{
+                opacity: 0,
+                y: 50,
+                transitionDelay: "0.8s",
+                transitionDuration: "0.5s",
+                transitionTimingFunction: "easeOut",
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+            >
+              <b>Share your innovation here!</b>
+            </motion.button>
+          </motion.div>
+        </div>
       </div>
     </div>
   );

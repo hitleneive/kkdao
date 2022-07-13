@@ -127,7 +127,8 @@ function FocusPage({ goToInvestor, isSmallDesktop, isMobile }) {
               <Arrow />
             </div>
             <div className="number">
-              <span className="actionNumber">{currentIndex + 1}</span>/
+              <span className="actionNumber">{currentIndex + 1}</span>
+              <span className="totalNumber">/</span>
               <span className="totalNumber">
                 {FOCUS_DEFAULT_IMAGE_MOBILE.length}
               </span>

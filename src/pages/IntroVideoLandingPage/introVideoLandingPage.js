@@ -66,6 +66,7 @@ function LandingPage({
       <video
         id="intro-video-start"
         src={IntroVideoMOV}
+        playsInline
         autoPlay
         muted
         preload="auto"
@@ -74,14 +75,14 @@ function LandingPage({
           setLoadedVideo(true);
         }}
         // className={`${stage === 0 ? "visible" : "invisible"}`}
-        onPlay={() => {
+        onEnded={() => {
           setStage(1);
           const time = setInterval(() => {
             setStage(2);
             // setHideContent(false);
             setRenderText(true);
             clearInterval(time);
-          }, 4000);
+          }, 100);
         }}
       >
         {stage === 0
@@ -94,6 +95,7 @@ function LandingPage({
 
       <video
         // ref={zoomRef}
+        playsInline
         id="intro-video-zoom"
         src={ZoomVideo}
         muted

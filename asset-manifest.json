@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/kkdao/static/css/main.66498518.css",
+    "main.css": "/kkdao/static/css/main.178a30c6.css",
     "main.js": "/kkdao/static/js/main.55c08957.js",
     "static/js/787.58671e7b.chunk.js": "/kkdao/static/js/787.58671e7b.chunk.js",
     "static/media/1920x1080-Vien-da.mp4": "/kkdao/static/media/1920x1080-Vien-da.fa8c025c090a488a6f40.mp4",
@@ -59,12 +59,12 @@
     "static/media/slick.woff": "/kkdao/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/kkdao/index.html",
     "static/media/close.svg": "/kkdao/static/media/close.2c3b5472e001c3965f5f9cc93330ca3c.svg",
-    "main.66498518.css.map": "/kkdao/static/css/main.66498518.css.map",
+    "main.178a30c6.css.map": "/kkdao/static/css/main.178a30c6.css.map",
     "main.55c08957.js.map": "/kkdao/static/js/main.55c08957.js.map",
     "787.58671e7b.chunk.js.map": "/kkdao/static/js/787.58671e7b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.66498518.css",
+    "static/css/main.178a30c6.css",
     "static/js/main.55c08957.js"
   ]
 }

@@ -9,7 +9,7 @@ function Footer() {
         className="kklogo"
         onClick={() => (window.location.href = "https://www.kkfund.co/")}
       >
-        <img src={KKLogo} alt="KKLogo" style={{ width: "75%" }} />
+        <img src={KKLogo} alt="KKLogo" />
       </div>
     </div>
   );

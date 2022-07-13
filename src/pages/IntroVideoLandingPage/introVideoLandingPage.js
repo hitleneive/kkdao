@@ -125,9 +125,11 @@ function LandingPage({ onFinished, isSmallDesktop, isMobile }) {
               >
                 {isMobile || isSmallDesktop ? (
                   <>
-                    <span>KK&nbsp;</span>
+                    <span>KK</span>
                     <br />
-                    <span>DAO</span>
+                    <span>
+                      DA<span>O</span>
+                    </span>
                   </>
                 ) : (
                   <span>
@@ -187,8 +189,13 @@ function LandingPage({ onFinished, isSmallDesktop, isMobile }) {
 }
 
 const Logo = () => (
-  <a className="kklogo" href="https://www.kkfund.co/" target="_blank"rel="noreferrer">
-    <img src={KKLogo} alt="KKLogo"/>
+  <a
+    className="kklogo"
+    href="https://www.kkfund.co/"
+    target="_blank"
+    rel="noreferrer"
+  >
+    <img src={KKLogo} alt="KKLogo" />
   </a>
 );
 

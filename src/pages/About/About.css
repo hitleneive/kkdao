@@ -216,6 +216,13 @@
     letter-spacing: 0.2em;
     margin-bottom: 1vh;
   }
+  #title p {
+    background: linear-gradient( 75.27deg, #7c7d7f -24.99%, #c3c4c6 14.72%, #9ea0a3 57.04%, #cbccce 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    margin: 0;
+  }
   #subtitleContainer {
     white-space: normal;
   }
@@ -223,7 +230,6 @@
     margin-top: 2vh;
     font-size: medium;
     line-height: 160%;
-    transform: translateY(-10vh);
     margin-left: 30vw;
     margin-right: 13.8vw;
     margin-bottom: 5vh;
@@ -330,7 +336,7 @@
   }
   #title {
     margin-left: 0;
-    margin-top: 30vh;
+    margin-top: 10vh;
   }
   #subtitle {
     margin-left: 0;

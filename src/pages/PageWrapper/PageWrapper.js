@@ -51,7 +51,7 @@ const PageWrapper = () => {
   useEffect(() => {
     if (wrapRef.current) {
       wrapRef.current.addEventListener("wheel", (evt) => {
-        if(!isMobile){
+        if (!(isMobile || isSmallDesktop)) {
           evt.preventDefault();
           wrapRef.current.scrollLeft += evt.deltaY;
         }

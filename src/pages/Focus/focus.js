@@ -40,6 +40,10 @@ const BoxImage = ({ images, classNames }) => {
     }
   }, [control, inView]);
 
+  useEffect(() => {
+    control.start("hidden");
+  }, []);
+
   return (
     <motion.div
       className="pillar"

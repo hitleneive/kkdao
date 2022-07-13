@@ -115,12 +115,16 @@
   justify-content: space-between;
   align-items: center;
   z-index: 100;
-  z-index: 2;
-  padding: 20px;
+  padding: 24px;
 }
 
 .kklogo {
   z-index: 2;
+}
+
+.kklogo img {
+  height: 52px;
+  width: 52px;
 }
 
 .emailTwitter {
@@ -128,14 +132,6 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-}
-
-.emailLogo {
-  width: 45%;
-}
-
-.twitterLogo {
-  width: 55%;
 }
 
 .content {
@@ -209,6 +205,11 @@
   margin-bottom: 12px;
   font-size: 1.45vw;
 }
+.mainContent p{
+  font-size: 24px;
+  line-height: 40px;
+  margin-bottom: 12px;
+}
 
 .wrapButton {
   /* position: absolute;
@@ -224,12 +225,12 @@
   min-width: 150px;
   height: 6vh;
   background-color: #ffd953;
+  padding: 16px 20px;
   border: none;
   color: black;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  border-radius: 15px;
   font-weight: bold;
   font-size: 80%;
   font-weight: 700;
@@ -237,6 +238,9 @@
   letter-spacing: 0.195em;
   text-transform: uppercase;
   cursor: pointer;
+  background: #FFD953;
+  box-shadow: -4px -4px 4px rgba(255, 255, 255, 0.4), 3px 3px 6px rgba(105, 129, 162, 0.2);
+  border-radius: 16px;
 }
 
 .rockLandingPage {
@@ -281,9 +285,14 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     -text-fill-color: transparent;
-    text-shadow: -4px -4px 4px rgba(255, 255, 255, 0.4), 3px 3px 33px rgba(105, 129, 162, 0.2);
+    text-shadow: -4px -4px 4px rgba(255, 255, 255, 0.4),
+      3px 3px 33px rgba(105, 129, 162, 0.2);
     display: inline-block;
-    background: linear-gradient(0deg, #FFFFFF 47.23%, rgba(255, 255, 255, 0.5) 94.32%);
+    background: linear-gradient(
+      0deg,
+      #ffffff 47.23%,
+      rgba(255, 255, 255, 0.5) 94.32%
+    );
     color: white;
     -webkit-text-stroke: 1px transparent;
     -webkit-background-clip: text;
@@ -305,12 +314,13 @@
     text-align: center;
     width: 100%;
   }
-  .mainContent>p {
+  .mainContent > p {
     margin-bottom: 2vh;
     line-height: 2;
   }
   #button {
-    box-shadow: -4px -4px 4px rgb(255 255 255 / 40%), 3px 3px 6px rgb(105 129 162 / 20%);
+    box-shadow: -4px -4px 4px rgb(255 255 255 / 40%),
+      3px 3px 6px rgb(105 129 162 / 20%);
     font-size: 12px;
     padding: 20px 28px;
     width: auto;
@@ -334,20 +344,24 @@
 
 @font-face {
   font-family: "SFUFuturaBold";
-  src: local("SFUFuturaBold"), url(../../assets/fonts/SFU/SFUFuturaBold.TTF) format("woff");
+  src: local("SFUFuturaBold"),
+    url(../../assets/fonts/SFU/SFUFuturaBold.TTF) format("woff");
 }
 
 @font-face {
   font-family: "SFUFuturaRegular";
-  src: local("SFUFuturaRegular"), url(../../assets/fonts/SFU/SFUFuturaRegular.TTF) format("woff");
+  src: local("SFUFuturaRegular"),
+    url(../../assets/fonts/SFU/SFUFuturaRegular.TTF) format("woff");
 }
 
 @font-face {
   font-family: "MontserratRegular";
-  src: local("MontserratRegular"), url(../../assets/fonts/Montserrat/Montserrat-Regular.ttf) format("woff");
+  src: local("MontserratRegular"),
+    url(../../assets/fonts/Montserrat/Montserrat-Regular.ttf) format("woff");
 }
 
 @font-face {
   font-family: "MontserratBold";
-  src: local("MontserratBold"), url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf) format("woff");
+  src: local("MontserratBold"),
+    url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf) format("woff");
 }

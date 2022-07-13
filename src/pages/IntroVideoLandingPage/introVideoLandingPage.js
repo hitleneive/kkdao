@@ -187,12 +187,9 @@ function LandingPage({ onFinished, isSmallDesktop, isMobile }) {
 }
 
 const Logo = () => (
-  <div
-    className="kklogo"
-    onClick={() => (window.location.href = "https://www.kkfund.co/")}
-  >
-    <img src={KKLogo} alt="KKLogo" style={{ width: "75%" }} />
-  </div>
+  <a className="kklogo" href="https://www.kkfund.co/" target="_blank"rel="noreferrer">
+    <img src={KKLogo} alt="KKLogo"/>
+  </a>
 );
 
 export default LandingPage;

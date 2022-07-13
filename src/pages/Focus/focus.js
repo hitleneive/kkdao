@@ -19,12 +19,42 @@ import Web3Img from "../../assets/Web3-Apps.png";
 
 import { useNavigate } from "react-router-dom";
 
-import { useRef, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { useInView } from "react-intersection-observer";
 import Slider from "react-slick";
 import BackButton from "../../assets/back-button.svg";
 import imageBuc from "../../assets/resources/mobile/buc.png";
 import Arrow from "../../components/Arrow.jsx";
 import { FOCUS_DEFAULT_IMAGE_MOBILE } from "../../constants";
+
+const BoxImage = ({ images, classNames }) => {
+  const control = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    } else {
+      // control.start("hidden");
+    }
+  }, [control, inView]);
+
+  return (
+    <motion.div
+      className="pillar"
+      ref={ref}
+      animate={control}
+      variants={{
+        visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+        hidden: { opacity: 0, y: 30 },
+      }}
+    >
+      <img className="daosImg" src={images[0]}></img>
+      <img className="daos" src={images[1]}></img>
+    </motion.div>
+  );
+};
 
 function FocusPage({ goToInvestor, isSmallDesktop, isMobile }) {
   const settings = {
@@ -56,42 +86,18 @@ function FocusPage({ goToInvestor, isSmallDesktop, isMobile }) {
       </div>
       {!(isSmallDesktop || isMobile) && (
         <div className="row1">
-          <div className="pillar">
-            <img className="daosImg" src={DaosImg}></img>
-            <img className="daos" src={Daos}></img>
-          </div>
-          <div className="pillar">
-            <img className="daosImg" src={DefiImg}></img>
-            <img className="daos" src={Defi}></img>
-          </div>
-          <div className="pillar">
-            <img className="daosImg" src={CefiImg}></img>
-            <img className="daos" src={Cefi}></img>
-          </div>
-          <div className="pillar">
-            <img className="daosImg" src={Web3Img}></img>
-            <img className="daos" src={Web3App}></img>
-          </div>
+          <BoxImage images={[DaosImg, Daos]} />
+          <BoxImage images={[DefiImg, Defi]} />
+          <BoxImage images={[CefiImg, Cefi]} />
+          <BoxImage images={[Web3Img, Web3App]} />
         </div>
       )}
       {!(isSmallDesktop || isMobile) && (
         <div className="row2">
-          <div className="pillar">
-            <img className="daosImg" src={InfraImg}></img>
-            <img className="daos" src={Infratructure}></img>
-          </div>
-          <div className="pillar">
-            <img className="daosImg" src={WalletImg}></img>
-            <img className="daos" src={Wallet}></img>
-          </div>
-          <div className="pillar">
-            <img className="daosImg" src={GamingImg}></img>
-            <img className="daos" src={Gaming}></img>
-          </div>
-          <div className="pillar">
-            <img className="daosImg" src={NFTImg}></img>
-            <img className="daos" src={NFT}></img>
-          </div>
+          <BoxImage images={[InfraImg, Infratructure]} />
+          <BoxImage images={[WalletImg, Wallet]} />
+          <BoxImage images={[GamingImg, Gaming]} />
+          <BoxImage images={[NFTImg, NFT]} />
         </div>
       )}
       {(isSmallDesktop || isMobile) && (

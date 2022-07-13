@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import BackButton from "../../assets/back-button.svg";
+import BackButton from "../../assets/back-icon.svg";
 import SocialButtons from "../../components/SocialButtons";
 import About from "../About/About";
 import FocusPage from "../Focus/focus";
@@ -51,8 +51,10 @@ const PageWrapper = () => {
   useEffect(() => {
     if (wrapRef.current) {
       wrapRef.current.addEventListener("wheel", (evt) => {
-        evt.preventDefault();
-        wrapRef.current.scrollLeft += evt.deltaY;
+        if(!isMobile){
+          evt.preventDefault();
+          wrapRef.current.scrollLeft += evt.deltaY;
+        }
       });
     }
   });
@@ -145,7 +147,7 @@ const BackIcon = ({ back }) => {
         src={BackButton}
         alt="BackIcon"
         className="backIcon"
-        style={{ width: "80%" }}
+        style={{ height: 52, width: 52 }}
         onClick={() => back()}
       />
     </div>

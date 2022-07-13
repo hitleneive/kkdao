@@ -4,21 +4,8 @@ import "react-circular-progressbar/dist/styles.css";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-function Loading({ onFinished }) {
-  const [value, setValue] = useState(0);
-
-  useEffect(() => {
-    const timerId = setTimeout(() => {
-      setValue(value + 1);
-    }, 30);
-
-    if (value >= 100) {
-      clearTimeout(timerId);
-      onFinished();
-    }
-
-    return () => clearTimeout(timerId);
-  }, [value]);
+function Loading({ loadedVideo = false, percent = 0 }) {
+  const value = Math.min(Math.max(percent - 10, 0) + (loadedVideo ? 10 : 0) + 1, 100);
 
   return (
     <motion.div
@@ -30,8 +17,7 @@ function Loading({ onFinished }) {
     >
       <div>
         <CircularProgressbar
-          value={value + 10}
-          maxValue={100}
+          value={value}
           text={value + "%"}
           styles={buildStyles({
             textColor: "#9EA0A3",

@@ -136,8 +136,9 @@ class Image360Viewer extends Component {
             this.view360Icon.innerText = percentage + '%';
         } */
     //console.log(percentage)
-    this.viewerPercentage.innerHTML = percentage + "%";
+    // this.viewerPercentage.innerHTML = percentage + "%";
     //console.log(percentage + '%')
+    this.props.setPercent(percentage)
   }
 
   onAllImagesLoaded(e) {

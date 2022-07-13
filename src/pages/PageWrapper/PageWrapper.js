@@ -32,6 +32,8 @@ const PageWrapper = () => {
   const wrapRef = useRef(null);
 
   const [widthScreen, setWidthScreen] = useState(window.innerWidth);
+  const [loadedVideo, setLoadedVideo] = useState(false);
+  const [percent, setPercent] = useState(0);
 
   const isSmallDesktop = widthScreen >= 768 && widthScreen < 1000;
   const isMobile = widthScreen < 768;
@@ -43,12 +45,6 @@ const PageWrapper = () => {
   useEffect(() => {
     window.addEventListener("resize", handleResize);
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  useEffect(() => {
     if (wrapRef.current) {
       wrapRef.current.addEventListener("wheel", (evt) => {
         if (!(isMobile || isSmallDesktop)) {
@@ -57,7 +53,16 @@ const PageWrapper = () => {
         }
       });
     }
-  });
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (loadedVideo && percent >= 99) setCurrentPage(1);
+  }, [loadedVideo, percent]);
+
   //
   const pageRefs = [
     {
@@ -89,55 +94,59 @@ const PageWrapper = () => {
   // 0: Loading
   // 1: Video
   // 2: Landing Page
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(0);
 
-  if (currentPage === 0) {
-    return <Loading onFinished={() => setCurrentPage(1)} />;
-  } else if (currentPage === 1) {
-    return (
-      <LandingPage
-        onFinished={() => setCurrentPage(2)}
-        isSmallDesktop={isSmallDesktop}
-        isMobile={isMobile}
-      />
-    );
-  } else {
-    return (
-      <div>
-        <div id="page-wrapper-root" ref={wrapRef}>
-          <div id="social-button">
-            <SocialButtons
-              leftIcon={<BackIcon back={() => setCurrentPage(1)} />}
-            />
-          </div>
-          <div className="page-container">
-            <About
-              goToFocus={() => pageRefs[2].callback()}
-              isSmallDesktop={isSmallDesktop}
-              isMobile={isMobile}
-            />
-          </div>
-          <div className="page-container" ref={pageRefs[0].ref}>
-            <FocusPage
-              goToInvestor={() => pageRefs[1].callback()}
-              isSmallDesktop={isSmallDesktop}
-              isMobile={isMobile}
-            />
-          </div>
+  return (
+    <>
+      {currentPage === 0 && (
+        <Loading loadedVideo={loadedVideo} percent={percent} />
+      )}
+      {(currentPage === 0 || currentPage === 1) && (
+        <LandingPage
+          onFinished={() => setCurrentPage(2)}
+          isSmallDesktop={isSmallDesktop}
+          isMobile={isMobile}
+          setLoadedVideo={setLoadedVideo}
+          setPercent={setPercent}
+        />
+      )}
+      {currentPage !== 0 && currentPage !== 1 && (
+        <div>
+          <div id="page-wrapper-root" ref={wrapRef}>
+            <div id="social-button">
+              <SocialButtons
+                leftIcon={<BackIcon back={() => setCurrentPage(1)} />}
+              />
+            </div>
+            <div className="page-container">
+              <About
+                goToFocus={() => pageRefs[2].callback()}
+                isSmallDesktop={isSmallDesktop}
+                isMobile={isMobile}
+              />
+            </div>
+            <div className="page-container" ref={pageRefs[0].ref}>
+              <FocusPage
+                goToInvestor={() => pageRefs[1].callback()}
+                isSmallDesktop={isSmallDesktop}
+                isMobile={isMobile}
+              />
+            </div>
 
-          <TrackVisibility className="page-container" ref={pageRefs[1].ref}>
-            <Investor isSmallDesktop={isSmallDesktop} isMobile={isMobile} />
-          </TrackVisibility>
+            <TrackVisibility className="page-container" ref={pageRefs[1].ref}>
+              <Investor isSmallDesktop={isSmallDesktop} isMobile={isMobile} />
+            </TrackVisibility>
 
-          <div className="page-container" ref={pageRefs[2].ref}>
-            <SignUp isSmallDesktop={isSmallDesktop} isMobile={isMobile} />
+            <div className="page-container" ref={pageRefs[2].ref}>
+              <SignUp isSmallDesktop={isSmallDesktop} isMobile={isMobile} />
+            </div>
+            {(isSmallDesktop || isMobile) && <Footer />}
+            {(isSmallDesktop || isMobile) && <ToTop />}
           </div>
-          {(isSmallDesktop || isMobile) && <Footer />}
-          {(isSmallDesktop || isMobile) && <ToTop />}
         </div>
-      </div>
-    );
-  }
+      )}
+    </>
+  );
 };
 
 const BackIcon = ({ back }) => {

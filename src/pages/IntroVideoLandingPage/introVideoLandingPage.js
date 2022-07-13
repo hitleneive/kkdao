@@ -7,7 +7,13 @@ import Image360Viewer from "../../components/Image360Viewer";
 import SocialButtons from "../../components/SocialButtons";
 import "./introVideoLandingPage.css";
 
-function LandingPage({ onFinished, isSmallDesktop, isMobile }) {
+function LandingPage({
+  onFinished,
+  isSmallDesktop,
+  isMobile,
+  setLoadedVideo = () => {},
+  setPercent = () => {},
+}) {
   const [renderText, setRenderText] = useState(false);
   const [coord, setCoord] = useState({ x: 0, y: 0 });
   const [currentImage, setCurrentImage] = useState(50);
@@ -63,6 +69,10 @@ function LandingPage({ onFinished, isSmallDesktop, isMobile }) {
         autoPlay
         muted
         preload="auto"
+        onLoadedData={() => {
+          console.log("loaded");
+          setLoadedVideo(true);
+        }}
         // className={`${stage === 0 ? "visible" : "invisible"}`}
         onPlay={() => {
           setStage(1);
@@ -103,6 +113,7 @@ function LandingPage({ onFinished, isSmallDesktop, isMobile }) {
             imagePath="/images/intro-rock-1920x1080"
             fileName="da-tach-nen_000{index}.png"
             start={50}
+            setPercent={setPercent}
           />
         </div>
         <AnimatePresence>

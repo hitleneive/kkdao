@@ -85,7 +85,6 @@
     font-style: normal;
     text-decoration-skip-ink: none;
     margin-bottom: 0;
-    font-family: SFUFuturaRegular;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     background: linear-gradient( 75.27deg, #7c7d7f -24.99%, #c3c4c6 14.72%, #9ea0a3 57.04%, #cbccce 100%);
@@ -93,6 +92,7 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     cursor: pointer;
+    font-weight: 400;
   }
   #sign-up-bottom-line {
     border-top: 0px;
@@ -315,6 +315,7 @@
     /* text-decoration-color: red; */
     font-style: normal;
     cursor: pointer;
+    font-weight: 400;
   }
   #formParentLayout {
     display: flex;

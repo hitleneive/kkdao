@@ -11,15 +11,15 @@ const SocialButtons = ({ leftIcon }) => {
             className="emailLogo"
             href="mailto:info@kkfund.co?subject=Register"
           >
-            <img src={EmailLogo} alt="EmailLogo" height={52} width={52} />
+            <img src={EmailLogo} alt="EmailLogo" height={44} width={44} />
           </a>
           <a href="#">
             <img
               src={TwitterLogo}
               alt="TwitterLogo"
               className="twitterLogo"
-              height={52}
-              width={52}
+              height={44}
+              width={44}
             />
           </a>
         </div>

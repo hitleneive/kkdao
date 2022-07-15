@@ -116,7 +116,7 @@
   }
   @keyframes about-rock1-animation {
     from {
-      transform: translateX(-10%, -15%);
+      transform: translate(-10%, -15%);
     }
     to {
       transform: translateX(10%, 15%);

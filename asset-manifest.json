@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/kkdao/static/css/main.c0c22989.css",
-    "main.js": "/kkdao/static/js/main.7efeef2b.js",
+    "main.css": "/kkdao/static/css/main.cdcf96b4.css",
+    "main.js": "/kkdao/static/js/main.a14c35b2.js",
     "static/js/787.58671e7b.chunk.js": "/kkdao/static/js/787.58671e7b.chunk.js",
     "static/media/1920x1080-Vien-da.mp4": "/kkdao/static/media/1920x1080-Vien-da.fa8c025c090a488a6f40.mp4",
     "static/media/1920x1080-Zoom.mp4": "/kkdao/static/media/1920x1080-Zoom.d8e6bc177306b91f97ba.mp4",
@@ -59,12 +59,12 @@
     "static/media/slick.woff": "/kkdao/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/kkdao/index.html",
     "static/media/close.svg": "/kkdao/static/media/close.2c3b5472e001c3965f5f9cc93330ca3c.svg",
-    "main.c0c22989.css.map": "/kkdao/static/css/main.c0c22989.css.map",
-    "main.7efeef2b.js.map": "/kkdao/static/js/main.7efeef2b.js.map",
+    "main.cdcf96b4.css.map": "/kkdao/static/css/main.cdcf96b4.css.map",
+    "main.a14c35b2.js.map": "/kkdao/static/js/main.a14c35b2.js.map",
     "787.58671e7b.chunk.js.map": "/kkdao/static/js/787.58671e7b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c0c22989.css",
-    "static/js/main.7efeef2b.js"
+    "static/css/main.cdcf96b4.css",
+    "static/js/main.a14c35b2.js"
   ]
 }

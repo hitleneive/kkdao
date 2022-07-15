@@ -1,14 +1,12 @@
 @media screen and (min-width: 1000px) {
   #page-wrapper-root {
     height: 100vh;
-
     /* display: flex;
     flex-direction: row; */
-
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
-    background-color: #ededed;
+    background-color: #efefef;
   }
   #social-button {
     z-index: 1000;
@@ -18,7 +16,6 @@
     right: 0;
     width: 100vw;
   }
-
   .page-container {
     display: inline-block;
     width: 100vw;
@@ -34,7 +31,6 @@
     white-space: nowrap;
     background-color: #EDEDED;
   }
-
   .page-container {
     width: 100vw;
     height: auto;

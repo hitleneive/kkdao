@@ -125,16 +125,20 @@ function LandingPage({
                 className="title"
                 initial={{
                   opacity: 0,
-                  y: 50,
-                  transitionDuration: "0.3s",
-                  transitionDelay: "0s",
-                  transitionTimingFunction: "easeOut",
+                  y: 100,
                 }}
                 animate={{
                   opacity: 1,
                   y: 0,
                 }}
-                exit={{ opacity: 0, transitionDuration: "0.5s" }}
+                transition={{
+                  duration: 0.4,
+                  delay: 0,
+                  ease: "easeInOut",
+                }}
+                exit={{
+                  opacity: 0,
+                }}
               >
                 {isMobile || isSmallDesktop ? (
                   <>
@@ -154,16 +158,20 @@ function LandingPage({
                 className="mainContent"
                 initial={{
                   opacity: 0,
-                  y: 50,
-                  transitionDuration: "0.4s",
-                  transitionDelay: "0.2s",
-                  transitionTimingFunction: "easeOut",
+                  y: 100,
                 }}
                 animate={{
                   opacity: 1,
                   y: 0,
                 }}
-                exit={{ opacity: 0, transitionDuration: "0.5s" }}
+                transition={{
+                  duration: 0.4,
+                  delay: 0.2,
+                  ease: "easeInOut",
+                }}
+                exit={{
+                  opacity: 0,
+                }}
               >
                 <p className="introContent">
                   <b style={{ fontFamily: "SFUFutura" }}>FIRST DAO</b> RUN BY A
@@ -174,13 +182,17 @@ function LandingPage({
                   className="wrapButton"
                   initial={{
                     opacity: 0,
-                    y: 50,
-                    transitionDuration: "0.4s",
-                    transitionDelay: "0.4s",
-                    transitionTimingFunction: "easeOut",
+                    y: 100,
+                  }}
+                  transition={{
+                    duration: 0.4,
+                    delay: 0.4,
+                    ease: "easeInOut",
                   }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, transitionDuration: "0.5s" }}
+                  exit={{
+                    opacity: 0,
+                  }}
                 >
                   <button
                     id="button"

@@ -9,7 +9,7 @@
   /* background-image: url("../../assets/about-bg.svg");
   background-size: cover;
   background-repeat: no-repeat; */
-  transition: opacity 0.3s ease;
+  transition: opacity 1s ease;
   position: absolute;
   top: 0;
   bottom: 0;

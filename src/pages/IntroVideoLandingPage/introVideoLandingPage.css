@@ -307,8 +307,10 @@
   }
   .mainContent>p {
     font-size: 20px;
-    margin-bottom: 2vh;
-    line-height: 2;
+    margin-bottom: 1.2vh;
+    margin-top: 1.2vh;
+    line-height: 1.75;
+    
   }
   .introContent {
     text-align: center;

@@ -9,7 +9,7 @@
   /* background-image: url("../../assets/about-bg.svg");
   background-size: cover;
   background-repeat: no-repeat; */
-  transition: opacity 0.3s ease;
+  transition: opacity 1s ease;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -123,8 +123,8 @@
 }
 
 .kklogo img {
-  height: 52px;
-  width: 52px;
+  width: 44px;
+  height: 44px;
 }
 
 .emailTwitter {
@@ -157,7 +157,7 @@
   right: 0;
   margin: auto;
   width: 22.2vw;
-  z-index: 1;
+  z-index: 10;
   cursor: pointer;
 }
 

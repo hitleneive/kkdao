@@ -158,7 +158,7 @@ const BackIcon = ({ back }) => {
         src={BackButton}
         alt="BackIcon"
         className="backIcon"
-        style={{ height: 52, width: 52 }}
+        style={{ height: 44, width: 44 }}
         onClick={() => back()}
       />
     </div>

@@ -110,6 +110,7 @@ const PageWrapper = () => {
           isMobile={isMobile}
           setLoadedVideo={setLoadedVideo}
           setPercent={setPercent}
+          startVideo={currentPage === 1}
         />
       )}
       {currentPage !== 0 && currentPage !== 1 && (

@@ -13,6 +13,7 @@ function LandingPage({
   isMobile,
   setLoadedVideo = () => {},
   setPercent = () => {},
+  startVideo = false
 }) {
   const [renderText, setRenderText] = useState(false);
   const [coord, setCoord] = useState({ x: 0, y: 0 });
@@ -48,6 +49,10 @@ function LandingPage({
       ?.setAttribute("height", "1080");
   }, [stage]);
 
+  useEffect(()=>{
+    if(startVideo && !stage) document.getElementById("intro-video-start")?.play();
+  },[startVideo, stage])
+
   return (
     <div>
       <div className="header">
@@ -67,11 +72,9 @@ function LandingPage({
         id="intro-video-start"
         src={IntroVideoMOV}
         playsInline
-        autoPlay
         muted
         preload="auto"
-        onLoadedData={() => {
-          console.log("loaded");
+        onCanPlayThrough={() => {
           setLoadedVideo(true);
         }}
         // className={`${stage === 0 ? "visible" : "invisible"}`}

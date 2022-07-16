@@ -162,7 +162,7 @@ const Form = ({ setIsShowingForm, isSmallDesktop, isMobile }) => {
           placeholder="Project Description"
         />
         <br />
-        <input type="submit" value="SEND" id="sendBtn" />
+        <button type="submit" id="sendBtn" >SEND</button>
       </form>
     </motion.div>
   );

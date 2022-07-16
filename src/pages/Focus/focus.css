@@ -113,9 +113,11 @@
   .img {
     transform: scale(1);
     transition: all 0.3s ease;
-    width: 180px;
+    width: 280px;
     height: auto;
-    max-width: 40vw;
+    max-width: 60vw;
+    max-height: 30vw;
+    object-fit: cover;
   }
   .name {
     font-weight: 400;
@@ -140,7 +142,7 @@
     width: 100%;
   }
   .slick-slider .slick-slide:not(.slick-current) .img {
-    transform: scale(0.5);
+    transform: scale(0.4);
   }
   .action {
     display: flex;
@@ -183,7 +185,16 @@
 
 @media screen and (max-width: 767px) {
   .buc {
-    top: -26vw;
+    top: -24vw;
+  }
+  .img {
+    transform: scale(1);
+    transition: all 0.3s ease;
+    width: 200px;
+    height: auto;
+    max-width: 50vw;
+    max-height: 40vw;
+    object-fit: cover;
   }
 }
 

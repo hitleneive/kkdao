@@ -19,11 +19,12 @@ class Image360Viewer extends Component {
     this.currentCanvasImage = null;
     this.centerX = 0;
     this.centerY = 0;
-    this.movementStart = 0;
-    this.movement = false;
-    this.speedFactor = 10;
+    this.movementStart = null;
+    this.movement = true;
+    this.speedFactor = 25;
     this.activeImage = props.start || 1;
     this.stopAtEdges = props.stopAtEdges ?? true;
+    this.prevEvent = null;
 
     this.state = {
       lastX: 0,
@@ -44,11 +45,11 @@ class Image360Viewer extends Component {
       currentCanvasImage: null,
       isFullScreen: false,
       viewPortElementWidth: null,
-      movementStart: 0,
-      movement: false,
+      movementStart: null,
+      movement: true,
       dragSpeed: 100,
-      speedFactor: 10,
-      activeImage:  props.start || 1,
+      speedFactor: 25,
+      activeImage: props.start || 1,
       stopAtEdges: props.stopAtEdges ?? true,
       panmode: false,
       currentLoop: 0,
@@ -138,7 +139,7 @@ class Image360Viewer extends Component {
     //console.log(percentage)
     // this.viewerPercentage.innerHTML = percentage + "%";
     //console.log(percentage + '%')
-    this.props.setPercent(percentage)
+    this.props.setPercent(percentage);
   }
 
   onAllImagesLoaded(e) {
@@ -153,11 +154,12 @@ class Image360Viewer extends Component {
     this.ctx = this.canvas.getContext("2d");
     //console.log('initialize data here')
 
-    this.attachEvents();
-
+    
     this.checkMobile();
     this.loadInitialImage();
 
+    this.attachEvents();
+    
     this.setState({ playing: this.props.autoplay });
   }
 
@@ -178,13 +180,13 @@ class Image360Viewer extends Component {
     this.viewPortElementRef.addEventListener("touchstart", this.startDragging);
     this.viewPortElementRef.addEventListener("touchmove", this.doDragging);
 
-    this.viewPortElementRef.removeEventListener("mouseup", this.stopMoving);
-    this.viewPortElementRef.removeEventListener("mousedown", this.startMoving);
-    this.viewPortElementRef.removeEventListener("mousemove", this.doMoving);
+    // this.viewPortElementRef.removeEventListener("mouseup", this.stopMoving);
+    // this.viewPortElementRef.removeEventListener("mousedown", this.startMoving);
+    document.removeEventListener("mousemove", this.doMoving);
 
-    this.viewPortElementRef.addEventListener("mouseup", this.stopDragging);
-    this.viewPortElementRef.addEventListener("mousedown", this.startDragging);
-    this.viewPortElementRef.addEventListener("mousemove", this.doDragging);
+    // this.viewPortElementRef.addEventListener("mouseup", this.stopDragging);
+    // this.viewPortElementRef.addEventListener("mousedown", this.startDragging);
+    document.addEventListener("mousemove", this.doDragging);
   }
 
   bind360ModeEvents() {
@@ -199,16 +201,16 @@ class Image360Viewer extends Component {
     this.viewPortElementRef.addEventListener("touchstart", this.touchStart);
     this.viewPortElementRef.addEventListener("touchmove", this.touchMove);
 
-    this.viewPortElementRef.removeEventListener("mouseup", this.stopDragging);
-    this.viewPortElementRef.removeEventListener(
-      "mousedown",
-      this.startDragging
-    );
-    this.viewPortElementRef.removeEventListener("mousemove", this.doDragging);
-
-    this.viewPortElementRef.addEventListener("mouseup", this.stopMoving);
-    this.viewPortElementRef.addEventListener("mousedown", this.startMoving);
-    this.viewPortElementRef.addEventListener("mousemove", this.doMoving);
+    // this.viewPortElementRef.removeEventListener("mouseup", this.stopDragging);
+    // this.viewPortElementRef.removeEventListener(
+    //   "mousedown",
+    //   this.startDragging
+    // );
+    document.removeEventListener("mousemove", this.doDragging);
+    document.removeEventListener("mousemove", this.doMoving);
+    // this.viewPortElementRef.addEventListener("mouseup", this.stopMoving);
+    // this.viewPortElementRef.addEventListener("mousedown", this.startMoving);
+    document.addEventListener("mousemove", this.doMoving);
   }
 
   startDragging = (evt) => {
@@ -264,7 +266,7 @@ class Image360Viewer extends Component {
   }
 
   loadInitialImage() {
-    this.currentImage = this.imageData[(this.props.start - 1) || 0];
+    this.currentImage = this.imageData[this.props.start - 1 || 0];
     this.setImage();
   }
 
@@ -290,7 +292,7 @@ class Image360Viewer extends Component {
         console.log("cannot load this image");
       };
     } else {
-      this.currentCanvasImage = this.images[this.state.activeImage-1];
+      this.currentCanvasImage = this.images[this.state.activeImage - 1];
       let viewportElement = this.viewPortElementRef.getBoundingClientRect();
       this.canvas.width = this.state.isFullScreen
         ? viewportElement.width
@@ -470,7 +472,7 @@ class Image360Viewer extends Component {
     this.redraw();
   }
 
-    //   Disable zoom
+  //   Disable zoom
   zoomImage = (evt) => {
     // this.setState({
     //   lastX: evt.offsetX || evt.pageX - this.canvas.offsetLeft,
@@ -542,15 +544,19 @@ class Image360Viewer extends Component {
   }
 
   onMove(pageX) {
+    if(this.movementStart == null){
+      console.log("Hello")
+      return this.movementStart = pageX;
+    }
     if (pageX - this.movementStart >= this.speedFactor) {
       let itemsSkippedRight =
         Math.floor((pageX - this.movementStart) / this.speedFactor) || 1;
 
       this.movementStart = pageX;
       if (this.props.spinReverse) {
-        this.moveActiveIndexDown(itemsSkippedRight);
+        this.moveActiveIndexDown(1);
       } else {
-        this.moveActiveIndexUp(itemsSkippedRight);
+        this.moveActiveIndexUp(1);
       }
       this.redraw();
     } else if (this.movementStart - pageX >= this.speedFactor) {
@@ -559,9 +565,9 @@ class Image360Viewer extends Component {
 
       this.movementStart = pageX;
       if (this.props.spinReverse) {
-        this.moveActiveIndexUp(itemsSkippedLeft);
+        this.moveActiveIndexUp(1);
       } else {
-        this.moveActiveIndexDown(itemsSkippedLeft);
+        this.moveActiveIndexDown(1);
       }
       this.redraw();
     }
@@ -573,9 +579,32 @@ class Image360Viewer extends Component {
     this.viewPortElementRef.style.cursor = "grabbing";
   };
 
+  trackingMouseMoving = (evt) => {
+    console.log(evt);
+    if(Date.now() - (this.prevEvent?.trackingTime || 0) >= 300){
+      if(this.prevEvent){
+        const distance = evt.clientX - this.prevEvent.clientX;
+        const start =this.movementStart;
+        const step = Math.ceil(distance/20);
+        for(let i= 1; i<= 15; i++){
+          // console.log("Step", step * i, start + step * i)
+          setTimeout(()=>{
+            this.onMove(start + step * i);
+          },i*20)
+        }
+        // console.log("distance", distance);
+      }
+      this.prevEvent = evt;
+      this.prevEvent.trackingTime = Date.now();
+    }
+    // const 
+  }
+
+
   doMoving = (evt) => {
-    if (this.movement) {
-      this.onMove(evt.clientX);
+    if (this.movement && this.props.trackingHover) {
+        this.onMove(evt.clientX)
+        // this.trackingMouseMoving(evt)
     }
   };
 
@@ -701,7 +730,7 @@ class Image360Viewer extends Component {
             this.viewerContainerRef = inputEl;
           }}
           id="identifier"
-          onWheel={(e) => this.zoomImage(e)}
+          // onWheel={(e) => this.zoomImage(e)}
         >
           {!this.state.imagesLoaded ? (
             <div className="v360-viewport">

@@ -112,9 +112,10 @@ function LandingPage({
         <div id="intro-center-rock">
           <Image360Viewer
             amount={100}
-            imagePath="/images/intro-rock-1920x1080"
+            imagePath="/kkdao/images/intro-rock-1920x1080"
             fileName="da-tach-nen_000{index}.png"
             start={50}
+            trackingHover={renderText && !isMobile}
             setPercent={setPercent}
           />
         </div>
@@ -132,7 +133,7 @@ function LandingPage({
                   y: 0,
                 }}
                 transition={{
-                  duration: 0.4,
+                  duration: 1,
                   delay: 0,
                   ease: "easeInOut",
                 }}
@@ -165,7 +166,7 @@ function LandingPage({
                   y: 0,
                 }}
                 transition={{
-                  duration: 0.4,
+                  duration: 1,
                   delay: 0.2,
                   ease: "easeInOut",
                 }}
@@ -185,7 +186,7 @@ function LandingPage({
                     y: 100,
                   }}
                   transition={{
-                    duration: 0.4,
+                    duration: 0.1,
                     delay: 0.4,
                     ease: "easeInOut",
                   }}

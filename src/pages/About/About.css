@@ -164,10 +164,10 @@
     height: 100vh;
     width: 100vw;
     position: relative;
-    background-image: url("../../assets/resources/mobile/about-bg.svg");
+    background-image: url("../../assets/resources/tablet/about-bg.png");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 30%;
+    background-position: bottom;
   }
   #backgroundContainer {
     position: absolute;
@@ -330,7 +330,8 @@
 
 @media screen and (max-width: 767px) {
   .about-root-container {
-    background-image: url("../../assets/resources/mobile/about-bg-sp.svg");
+    background-image: url("../../assets/resources/mobile/about-bg.png");
+    /* background-size: auto auto; */
   }
   #title {
     margin-left: 0;

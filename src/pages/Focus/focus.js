@@ -64,8 +64,8 @@ function FocusPage({ goToInvestor, isSmallDesktop, isMobile }) {
   const settings = {
     arrows: false,
     centerMode: true,
-    autoplay: true,
-    autoplaySpeed: 2000,
+    autoplay: false,
+    autoplaySpeed: 3000,
     infinite: true,
     centerPadding: "0px",
     slidesToShow: 3,

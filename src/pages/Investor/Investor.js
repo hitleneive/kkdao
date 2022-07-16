@@ -130,11 +130,14 @@ const Investor = ({ goToSignUp, isSmallDesktop, isMobile }) => {
         <Slider {...settings}>
           {logos.map((logo, index) => (
             <div key={index}>
+              <div className="itemInner">
               <img
                 className={firstLoad === true ? "animate" : ""}
                 src={logo}
                 alt={logo}
               ></img>
+              </div>
+              
             </div>
           ))}
         </Slider>

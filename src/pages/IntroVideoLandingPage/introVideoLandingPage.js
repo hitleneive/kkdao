@@ -85,12 +85,12 @@ function LandingPage({
           }, 100);
         }}
       >
-        {stage === 0
+        {/* {stage === 0
           ? setTimeout(() => {
               var myVideo = document.getElementById("intro-video-start");
               myVideo.play();
             }, 100)
-          : null}
+          : null} */}
       </video>
 
       <video

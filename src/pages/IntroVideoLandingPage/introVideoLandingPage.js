@@ -7,13 +7,34 @@ import Image360Viewer from "../../components/Image360Viewer";
 import SocialButtons from "../../components/SocialButtons";
 import "./introVideoLandingPage.css";
 
+const preloadVideo = (video, url, onFinish) => {
+  var req = new XMLHttpRequest();
+  req.open("GET", url, true);
+  req.responseType = "blob";
+
+  req.onload = function () {
+    // Onload is triggered even on 404
+    // so we need to check the status code
+    if (this.status === 200) {
+      var videoBlob = this.response;
+      var vid = URL.createObjectURL(videoBlob); // IE10+
+      // Video is now downloaded
+      // and we can set it as source on the video element
+      video.src = vid;
+      onFinish();
+    }
+  };
+  req.onerror = function () {};
+  req.send();
+};
+
 function LandingPage({
   onFinished,
   isSmallDesktop,
   isMobile,
   setLoadedVideo = () => {},
   setPercent = () => {},
-  startVideo = false
+  startVideo = false,
 }) {
   const [renderText, setRenderText] = useState(false);
   const [coord, setCoord] = useState({ x: 0, y: 0 });
@@ -49,9 +70,20 @@ function LandingPage({
       ?.setAttribute("height", "1080");
   }, [stage]);
 
-  useEffect(()=>{
-    if(startVideo && !stage) document.getElementById("intro-video-start")?.play();
-  },[startVideo, stage])
+  useEffect(() => {
+    preloadVideo(
+      document.getElementById("intro-video-start"),
+      IntroVideoMOV,
+      () => {
+        setLoadedVideo(true);
+      }
+    );
+  }, []);
+
+  useEffect(() => {
+    if (startVideo && !stage)
+      document.getElementById("intro-video-start")?.play();
+  }, [startVideo, stage]);
 
   return (
     <div>
@@ -70,13 +102,24 @@ function LandingPage({
 
       <video
         id="intro-video-start"
-        src={IntroVideoMOV}
+        // src={IntroVideoMOV}
         playsInline
         muted
         preload="auto"
-        onCanPlayThrough={() => {
-          setLoadedVideo(true);
-        }}
+        // onCanPlayThrough={(evt) => {
+        //   console.log(
+        //     "onCanPlayThrough",
+        //     evt,
+        //     evt.target?.buffered.end(0),
+        //     evt.target?.seekable.end(0)
+        //   );
+        //   if (
+        //     Math.round(evt.target?.buffered.end(0)) /
+        //       Math.round(evt.target?.seekable.end(0)) ===
+        //     1
+        //   )
+        //     setLoadedVideo(true);
+        // }}
         // className={`${stage === 0 ? "visible" : "invisible"}`}
         onEnded={() => {
           setStage(1);

@@ -78,6 +78,13 @@ function LandingPage({
         setLoadedVideo(true);
       }
     );
+    if(isMobile || isSmallDesktop){
+      // Fake loading
+      setPercent(10+Math.round(Math.random()*20));
+      setTimeout(()=>setPercent(30+Math.round(Math.random()*30)),500);
+      setTimeout(()=>setPercent(70+Math.round(Math.random()*20)),1000);
+      setTimeout(()=>setPercent(100),1700);
+    }
   }, []);
 
   useEffect(() => {
@@ -156,14 +163,14 @@ function LandingPage({
           <div className="rock-block" onClick={() => setStage(3)}></div>
         )}
         <div id="intro-center-rock">
-          <Image360Viewer
+          {!isMobile && !isSmallDesktop && <Image360Viewer
             amount={100}
             imagePath="/kkdao/images/intro-rock-1920x1080"
             fileName="da-tach-nen_000{index}.png"
             start={50}
             trackingHover={renderText && !isMobile}
             setPercent={setPercent}
-          />
+          />}
         </div>
         <AnimatePresence>
           {renderText && (

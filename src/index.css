@@ -1,13 +1,51 @@
+@font-face {
+  font-family: "SFUFuturaBold";
+  src: url(./assets/fonts/SFU/SFUFuturaBold.TTF) format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: "SFUFuturaRegular";
+  src: url(./assets/fonts/SFU/SFUFuturaRegular.TTF) format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: "MontserratRegular";
+  src: url(./assets/fonts/Montserrat/Montserrat-Regular.ttf) format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: "MontserratBold";
+  src: url(./assets/fonts/Montserrat/Montserrat-Bold.ttf) format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SFUFutura";
+  src: url(./assets/fonts/SFU/SFUFuturaBold.TTF) format("woff");
+  font-display: swap;
+}
+html{
+  font-family: 'MontserratRegular';
+}
+.load-font-1{
+  font-family: 'SFUFuturaBold',
+}
+.load-font-2{
+  font-family: 'MontserratBold', 
+}
+.load-font-3{
+  font-family: 'SFUFutura', 
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: 'SFUFuturaRegular', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }

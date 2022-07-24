@@ -9,6 +9,9 @@ function App() {
       <Router basename="/kkdao">
         <AnimatedRoutes />
       </Router>
+      <div className="load-font-1" />
+      <div className="load-font-2" />
+      <div className="load-font-3" />
     </div>
   );
 }

@@ -25,20 +25,23 @@
   font-display: swap;
 }
 html{
-  font-family: 'MontserratRegular';
+  font-family: 'SFUFuturaBold';
 }
 .load-font-1{
-  font-family: 'SFUFuturaBold',
+  font-family: 'MontserratRegular',
 }
 .load-font-2{
   font-family: 'MontserratBold', 
 }
 .load-font-3{
-  font-family: 'SFUFutura', 
+  font-family: 'SFUFuturaRegular', 
+}
+button{
+  font-family: 'MontserratBold';
 }
 body {
   margin: 0;
-  font-family: 'SFUFuturaRegular', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: 'SFUFutura', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;

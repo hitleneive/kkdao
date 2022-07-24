@@ -60,7 +60,6 @@ export const SETTING_ABOUT = {
 export const SETTING_FOCUS = {
   projects: [
     { title: "DAOs", image: "/kkdao/images/projects/DAOs.png" },
-    { title: "DAOs", image: "/kkdao/images/projects/DAOs.png" },
     { title: "Defi", image: "/kkdao/images/projects/Defi.png" },
     { title: "Cefi", image: "/kkdao/images/projects/Cefi.png" },
     { title: "Web3-Apps", image: "/kkdao/images/projects/Web3-Apps.png" },

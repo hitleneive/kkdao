@@ -345,23 +345,3 @@
     left: 3vw;
   }
 }
-
-@font-face {
-  font-family: "SFUFuturaBold";
-  src: local("SFUFuturaBold"), url(../../assets/fonts/SFU/SFUFuturaBold.TTF) format("woff");
-}
-
-@font-face {
-  font-family: "SFUFuturaRegular";
-  src: local("SFUFuturaRegular"), url(../../assets/fonts/SFU/SFUFuturaRegular.TTF) format("woff");
-}
-
-@font-face {
-  font-family: "MontserratRegular";
-  src: local("MontserratRegular"), url(../../assets/fonts/Montserrat/Montserrat-Regular.ttf) format("woff");
-}
-
-@font-face {
-  font-family: "MontserratBold";
-  src: local("MontserratBold"), url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf) format("woff");
-}

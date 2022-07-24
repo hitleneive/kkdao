@@ -141,22 +141,6 @@
       transform: rotate(0deg) translate(-0%, -10%) scale(1.1) rotate(0deg);
     }
   }
-  @font-face {
-    font-family: "SFUFuturaBold";
-    src: local("SFUFuturaBold"), url(../../assets/fonts/SFU/SFUFuturaBold.TTF) format("woff");
-  }
-  @font-face {
-    font-family: "SFUFuturaRegular";
-    src: local("SFUFuturaRegular"), url(../../assets/fonts/SFU/SFUFuturaRegular.TTF) format("woff");
-  }
-  @font-face {
-    font-family: "MontserratRegular";
-    src: local("MontserratRegular"), url(../../assets/fonts/Montserrat/Montserrat-Regular.ttf) format("woff");
-  }
-  @font-face {
-    font-family: "MontserratBold";
-    src: local("MontserratBold"), url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf) format("woff");
-  }
 }
 
 @media screen and (max-width: 999px) {
@@ -313,22 +297,6 @@
     to {
       transform: rotate(0deg) translate(-0%, -10%) scale(1.1) rotate(0deg);
     }
-  }
-  @font-face {
-    font-family: "SFUFuturaBold";
-    src: local("SFUFuturaBold"), url(../../assets/fonts/SFU/SFUFuturaBold.TTF) format("woff");
-  }
-  @font-face {
-    font-family: "SFUFuturaRegular";
-    src: local("SFUFuturaRegular"), url(../../assets/fonts/SFU/SFUFuturaRegular.TTF) format("woff");
-  }
-  @font-face {
-    font-family: "MontserratRegular";
-    src: local("MontserratRegular"), url(../../assets/fonts/Montserrat/Montserrat-Regular.ttf) format("woff");
-  }
-  @font-face {
-    font-family: "MontserratBold";
-    src: local("MontserratBold"), url(../../assets/fonts/Montserrat/Montserrat-Bold.ttf) format("woff");
   }
 }
 

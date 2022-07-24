@@ -105,7 +105,7 @@ const PageWrapper = () => {
   // 0: Loading
   // 1: Video
   // 2: Landing Page
-  const [currentPage, setCurrentPage] = useState(2);
+  const [currentPage, setCurrentPage] = useState(0);
 
   return (
     <>

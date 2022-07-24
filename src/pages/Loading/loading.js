@@ -1,8 +1,7 @@
-import "./loading.css";
+import { motion } from "framer-motion";
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import "./loading.css";
 
 function Loading({ loadedVideo = false, percent = 0 }) {
   const value = Math.min(Math.max(percent - 10, 0) + (loadedVideo ? 10 : 0) + 1, 100);

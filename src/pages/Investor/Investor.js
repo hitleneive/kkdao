@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useMemo, useState } from "react";
 import Slider from "react-slick";
 import Logo from "../../assets/logoInvestor.svg";
+import { SETTING_INVESTOR } from "../../constants";
 import Rock4 from "./../../assets/KKDAO_Rock/Rock04.png";
 import Rock5 from "./../../assets/KKDAO_Rock/Rock05.png";
 import bgInvestor from "./../../assets/resources/mobile/bgInvestor.png";
@@ -10,7 +11,12 @@ import "./Investor.css";
 
 const logos = [Logo, Logo, Logo, Logo];
 
-const Investor = ({ goToSignUp, isSmallDesktop, isMobile }) => {
+const Investor = ({
+  goToSignUp,
+  isSmallDesktop,
+  isMobile,
+  data = SETTING_INVESTOR,
+}) => {
   const [isDone, setIsDone] = useState(false);
   const [firstLoad, setFirstLoad] = useState(true);
 
@@ -83,11 +89,10 @@ const Investor = ({ goToSignUp, isSmallDesktop, isMobile }) => {
           x: 0,
         }}
       >
-        {/* M&nbsp;I&nbsp;S&nbsp;T&nbsp;L&nbsp;E&nbsp;T&nbsp;O&nbsp;E */}
-        MISTLETOE
+        {data.first_investor?.title}
       </motion.h1>
     ),
-    []
+    [data]
   );
 
   const subTitleText = useMemo(
@@ -105,12 +110,10 @@ const Investor = ({ goToSignUp, isSmallDesktop, isMobile }) => {
           y: 0,
         }}
       >
-        Mistletoe is a venture capital firm that prefers to invest in start up
-        companies. The firm seeks to invest in the education, software and
-        support sectors. It is based in Tokyo, Japan and was founded in 2013.
+        {data.first_investor?.description}
       </motion.p>
     ),
-    []
+    [data]
   );
 
   const slide = useMemo(
@@ -131,13 +134,12 @@ const Investor = ({ goToSignUp, isSmallDesktop, isMobile }) => {
           {logos.map((logo, index) => (
             <div key={index}>
               <div className="itemInner">
-              <img
-                className={firstLoad === true ? "animate" : ""}
-                src={logo}
-                alt={logo}
-              ></img>
+                <img
+                  className={firstLoad === true ? "animate" : ""}
+                  src={logo}
+                  alt={logo}
+                ></img>
               </div>
-              
             </div>
           ))}
         </Slider>

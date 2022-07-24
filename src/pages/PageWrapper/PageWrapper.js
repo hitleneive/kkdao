@@ -15,16 +15,13 @@ import TrackVisibility from "react-on-screen";
 import Footer from "../Footer";
 import ToTop from "../ToTop";
 import { useHorizontalScroll } from "./../../components/useHorizontal";
+import { API_ENDPOINT, SETTINGS } from "../../constants";
 
 // const InvestorPage = (props) => {
 //   return <Investor {...props} />;
 // };
 
 const PageWrapper = () => {
-  // const scrollRef = useHorizontalScroll();
-  // Refs
-
-  const scrollRef = useHorizontalScroll();
   const focusRef = useRef(null);
   const investorRef = useRef(null);
   const signUpRef = useRef(null);
@@ -35,8 +32,19 @@ const PageWrapper = () => {
   const [loadedVideo, setLoadedVideo] = useState(false);
   const [percent, setPercent] = useState(0);
 
+  const [data, setData] = useState(SETTINGS);
+
   const isSmallDesktop = widthScreen >= 768 && widthScreen < 1000;
   const isMobile = widthScreen < 768;
+
+  const initData = async () => {
+    try {
+      const content = await (await fetch(API_ENDPOINT)).json();
+      setData(content.acf);
+    } catch (e) {
+      console.warn(e);
+    }
+  };
 
   const handleResize = () => {
     setWidthScreen(window.innerWidth);
@@ -56,6 +64,7 @@ const PageWrapper = () => {
   useEffect(() => {
     window.addEventListener("resize", handleResize);
 
+    initData();
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -96,7 +105,7 @@ const PageWrapper = () => {
   // 0: Loading
   // 1: Video
   // 2: Landing Page
-  const [currentPage, setCurrentPage] = useState(0);
+  const [currentPage, setCurrentPage] = useState(2);
 
   return (
     <>
@@ -105,6 +114,7 @@ const PageWrapper = () => {
       )}
       {(currentPage === 0 || currentPage === 1) && (
         <LandingPage
+          data={data?.homepage}
           onFinished={() => setCurrentPage(2)}
           isSmallDesktop={isSmallDesktop}
           isMobile={isMobile}
@@ -118,11 +128,13 @@ const PageWrapper = () => {
           <div id="page-wrapper-root" ref={wrapRef}>
             <div id="social-button">
               <SocialButtons
+                data={data?.homepage?.cta}
                 leftIcon={<BackIcon back={() => setCurrentPage(1)} />}
               />
             </div>
             <div className="page-container">
               <About
+                data={data?.about}
                 goToFocus={() => pageRefs[2].callback()}
                 isSmallDesktop={isSmallDesktop}
                 isMobile={isMobile}
@@ -130,6 +142,7 @@ const PageWrapper = () => {
             </div>
             <div className="page-container" ref={pageRefs[0].ref}>
               <FocusPage
+                data={data?.focus_project}
                 goToInvestor={() => pageRefs[1].callback()}
                 isSmallDesktop={isSmallDesktop}
                 isMobile={isMobile}
@@ -137,7 +150,11 @@ const PageWrapper = () => {
             </div>
 
             <TrackVisibility className="page-container" ref={pageRefs[1].ref}>
-              <Investor isSmallDesktop={isSmallDesktop} isMobile={isMobile} />
+              <Investor
+                data={data?.investor}
+                isSmallDesktop={isSmallDesktop}
+                isMobile={isMobile}
+              />
             </TrackVisibility>
 
             <div className="page-container" ref={pageRefs[2].ref}>

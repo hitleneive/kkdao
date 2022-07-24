@@ -1,13 +1,17 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import KKLogo from "../../assets/kkLogo.png";
-import IntroVideoMOV from "../../assets/video/1920x1080-Vien-da.mp4";
-import ZoomVideo from "../../assets/video/1920x1080-Zoom.mp4";
 import Image360Viewer from "../../components/Image360Viewer";
 import SocialButtons from "../../components/SocialButtons";
+import { SETTING_HOMEPAGE } from "../../constants";
 import "./introVideoLandingPage.css";
 
 const preloadVideo = (video, url, onFinish) => {
+  if (window[url]) {
+    var vid = URL.createObjectURL(window[url]);
+    video.src = vid;
+    return onFinish();
+  }
   var req = new XMLHttpRequest();
   req.open("GET", url, true);
   req.responseType = "blob";
@@ -17,6 +21,7 @@ const preloadVideo = (video, url, onFinish) => {
     // so we need to check the status code
     if (this.status === 200) {
       var videoBlob = this.response;
+      window[url] = videoBlob;
       var vid = URL.createObjectURL(videoBlob); // IE10+
       // Video is now downloaded
       // and we can set it as source on the video element
@@ -29,6 +34,7 @@ const preloadVideo = (video, url, onFinish) => {
 };
 
 function LandingPage({
+  data = SETTING_HOMEPAGE,
   onFinished,
   isSmallDesktop,
   isMobile,
@@ -73,29 +79,38 @@ function LandingPage({
   useEffect(() => {
     preloadVideo(
       document.getElementById("intro-video-start"),
-      IntroVideoMOV,
+      "https://res.cloudinary.com/da0h1pc6y/video/upload/v1658540595/kkdao/1920x1080-Vien-da.mp4",
       () => {
         setLoadedVideo(true);
       }
     );
-    if(isMobile || isSmallDesktop){
+    if (isMobile || isSmallDesktop) {
       // Fake loading
-      setPercent(10+Math.round(Math.random()*20));
-      setTimeout(()=>setPercent(30+Math.round(Math.random()*30)),500);
-      setTimeout(()=>setPercent(70+Math.round(Math.random()*20)),1000);
-      setTimeout(()=>setPercent(100),1700);
+      setPercent(10 + Math.round(Math.random() * 20));
+      setTimeout(() => setPercent(30 + Math.round(Math.random() * 30)), 500);
+      setTimeout(() => setPercent(70 + Math.round(Math.random() * 20)), 1000);
+      setTimeout(() => setPercent(100), 1700);
     }
   }, []);
 
   useEffect(() => {
-    if (startVideo && !stage)
+    if (startVideo && !stage) {
       document.getElementById("intro-video-start")?.play();
+      preloadVideo(
+        document.getElementById("intro-video-zoom"),
+        "https://res.cloudinary.com/da0h1pc6y/video/upload/v1658540594/kkdao/1920x1080-Zoom.mp4",
+        () => {}
+      );
+    }
   }, [startVideo, stage]);
 
   return (
     <div>
       <div className="header">
-        <SocialButtons leftIcon={<Logo />} />
+        <SocialButtons
+          data={data?.cta}
+          leftIcon={<Logo link={data?.cta?.logo_link} />}
+        />
       </div>
       {/* <video
                         id='intro-video-background'
@@ -150,7 +165,7 @@ function LandingPage({
         // ref={zoomRef}
         playsInline
         id="intro-video-zoom"
-        src={ZoomVideo}
+        src="https://res.cloudinary.com/da0h1pc6y/video/upload/v1658540594/kkdao/1920x1080-Zoom.mp4"
         muted
         className={`${stage === 3 ? "visible" : "invisible"}`}
         onEnded={() => onFinished()}
@@ -163,14 +178,16 @@ function LandingPage({
           <div className="rock-block" onClick={() => setStage(3)}></div>
         )}
         <div id="intro-center-rock">
-          {!isMobile && !isSmallDesktop && <Image360Viewer
-            amount={100}
-            imagePath="/kkdao/images/intro-rock-1920x1080"
-            fileName="da-tach-nen_000{index}.png"
-            start={50}
-            trackingHover={renderText && !isMobile}
-            setPercent={setPercent}
-          />}
+          {!isMobile && !isSmallDesktop && (
+            <Image360Viewer
+              amount={100}
+              imagePath="https://res.cloudinary.com/da0h1pc6y/image/upload/v1658540460/intro-rock-1920x1080"
+              fileName="da-tach-nen_000{index}.png"
+              start={50}
+              trackingHover={renderText && !isMobile}
+              setPercent={setPercent}
+            />
+          )}
         </div>
         <AnimatePresence>
           {renderText && (
@@ -196,16 +213,20 @@ function LandingPage({
               >
                 {isMobile || isSmallDesktop ? (
                   <>
-                    <span>KK</span>
-                    <br />
-                    <span>
-                      DA<span>O</span>
-                    </span>
+                    <span>{data.title}</span>
+                    {/* {data.title.split("").map((x, index) => (
+                      <span key={index}>{x}</span>
+                    ))} */}
                   </>
                 ) : (
-                  <span>
-                    KKDA<span>O</span>
-                  </span>
+                  <>
+                    {data.title
+                      .split("")
+                      .filter((x) => x != " ")
+                      .map((x, index) => (
+                        <span key={index}>{x}</span>
+                      ))}
+                  </>
                 )}
               </motion.h1>
               <motion.div
@@ -227,11 +248,7 @@ function LandingPage({
                   opacity: 0,
                 }}
               >
-                <p className="introContent">
-                  <b style={{ fontFamily: "SFUFutura" }}>FIRST DAO</b> RUN BY A
-                  VC FIRM<br></br>IN{" "}
-                  <b style={{ fontFamily: "SFUFutura" }}>SOUTHEAST ASIA</b>{" "}
-                </p>
+                <div dangerouslySetInnerHTML={{ __html: data.description }} />
                 <motion.div
                   className="wrapButton"
                   initial={{
@@ -267,10 +284,10 @@ function LandingPage({
   );
 }
 
-const Logo = () => (
+const Logo = ({ link }) => (
   <a
     className="kklogo"
-    href="https://www.kkfund.co/"
+    href={link}
     target="_blank"
     rel="noreferrer"
   >

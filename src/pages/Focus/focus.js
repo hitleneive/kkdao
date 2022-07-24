@@ -1,22 +1,4 @@
-import Infratructure from "../../assets/Frame 53 (1).svg";
-import Cefi from "../../assets/Frame 53.svg";
-import NFT from "../../assets/Frame 54 (1).svg";
-import Daos from "../../assets/Frame 54.svg";
-import Wallet from "../../assets/Frame 55 (1).svg";
-import Defi from "../../assets/Frame 55.svg";
-import Gaming from "../../assets/Frame 56 (1).svg";
-import Web3App from "../../assets/Frame 56.svg";
 import "./focus.css";
-
-import CefiImg from "../../assets/CeFi.png";
-import DaosImg from "../../assets/DAOs.png";
-import DefiImg from "../../assets/DeFi.png";
-import GamingImg from "../../assets/Gaming.png";
-import InfraImg from "../../assets/Infratructure.png";
-import NFTImg from "../../assets/NFT.png";
-import WalletImg from "../../assets/Walet.png";
-import Web3Img from "../../assets/Web3-Apps.png";
-
 import { useNavigate } from "react-router-dom";
 
 import { motion, useAnimation } from "framer-motion";
@@ -25,10 +7,11 @@ import { useInView } from "react-intersection-observer";
 import Slider from "react-slick";
 import BackButton from "../../assets/back-button.svg";
 import imageBuc from "../../assets/resources/mobile/buc.png";
+import pcBuc from "../../assets/resources/pc/buc.png";
 import Arrow from "../../components/Arrow.jsx";
-import { FOCUS_DEFAULT_IMAGE_MOBILE } from "../../constants";
+import { FOCUS_DEFAULT_IMAGE_MOBILE, SETTING_FOCUS } from "../../constants";
 
-const BoxImage = ({ images, classNames }) => {
+const BoxImage = ({ image, text }) => {
   const control = useAnimation();
   const [ref, inView] = useInView();
 
@@ -54,13 +37,14 @@ const BoxImage = ({ images, classNames }) => {
         hidden: { opacity: 0, y: 30 },
       }}
     >
-      <img className="daosImg" src={images[0]}></img>
-      <img className="daos" src={images[1]}></img>
+      <img className="daosImg" src={image} />
+      <img className="daos" src={pcBuc}/>
+      <span>{text}</span>
     </motion.div>
   );
 };
 
-function FocusPage({ goToInvestor, isSmallDesktop, isMobile }) {
+function FocusPage({ goToInvestor, isSmallDesktop, isMobile, data = SETTING_FOCUS }) {
   const settings = {
     arrows: false,
     centerMode: true,
@@ -82,7 +66,7 @@ function FocusPage({ goToInvestor, isSmallDesktop, isMobile }) {
     <div className="focusPage">
       <div className="titleFocus">
         <div className="child" onClick={() => goToInvestor()}>
-          F O C U S &nbsp;P R O J E C T
+          {data.title}
         </div>
         {/* <div className="child2">
           <img className="rock1" src={Rock1}></img>
@@ -90,18 +74,16 @@ function FocusPage({ goToInvestor, isSmallDesktop, isMobile }) {
       </div>
       {!(isSmallDesktop || isMobile) && (
         <div className="row1">
-          <BoxImage images={[DaosImg, Daos]} />
-          <BoxImage images={[DefiImg, Defi]} />
-          <BoxImage images={[CefiImg, Cefi]} />
-          <BoxImage images={[Web3Img, Web3App]} />
+          {data.projects.slice(data.projects,4).map(item=>(
+            <BoxImage key={item.title} image={item.image} text={item.title}/>
+          ))}
         </div>
       )}
       {!(isSmallDesktop || isMobile) && (
-        <div className="row2">
-          <BoxImage images={[InfraImg, Infratructure]} />
-          <BoxImage images={[WalletImg, Wallet]} />
-          <BoxImage images={[GamingImg, Gaming]} />
-          <BoxImage images={[NFTImg, NFT]} />
+        <div className="row1">
+          {data.projects.slice(4,8).map(item=>(
+            <BoxImage key={item.title} image={item.image} text={item.title}/>
+          ))}
         </div>
       )}
       {(isSmallDesktop || isMobile) && (

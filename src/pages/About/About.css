@@ -58,6 +58,10 @@
     -webkit-text-fill-color: transparent;
     display: inline-block;
     margin: 150px 0 0;
+    margin-right: 5vh;
+  }
+  #title>p:last-child{
+    margin-right: 0;
   }
   #title3 {
     unicode-bidi: bidi-override;

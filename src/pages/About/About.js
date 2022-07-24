@@ -1,12 +1,12 @@
-import SocialButtons from "../../components/SocialButtons";
+import { motion } from "framer-motion";
 import Rock01 from "../../assets/KKDAO_Rock/Rock01.png";
 import Rock02 from "../../assets/KKDAO_Rock/Rock02.png";
 import Rock03 from "../../assets/KKDAO_Rock/Rock03.png";
-import { motion } from "framer-motion";
 
+import { SETTING_ABOUT } from "../../constants";
 import "./About.css";
 
-const About = ({ goToFocus }) => {
+const About = ({ goToFocus, data = SETTING_ABOUT }) => {
   return (
     <div className="about-root-container">
       <div id="backgroundContainer">
@@ -23,54 +23,26 @@ const About = ({ goToFocus }) => {
       <div id="introContainer">
         <div id="introContainerInner">
           <div id="title">
-            <motion.p
-              id="title1"
-              initial={{
-                opacity: 0,
-                x: -30,
-                transitionDelay: "0s",
-                transitionDuration: "0.2s",
-                transitionTimingFunction: "easeOut",
-              }}
-              animate={{
-                opacity: 1,
-                x: 0,
-              }}
-            >
-              ABOUT
-            </motion.p>{" "}
-            <motion.p
-              id="title2"
-              initial={{
-                opacity: 0,
-                x: -30,
-                transitionDelay: "0.2s",
-                transitionDuration: "0.2s",
-                transitionTimingFunction: "easeOut",
-              }}
-              animate={{
-                opacity: 1,
-                x: 0,
-              }}
-            >
-              THE
-            </motion.p>{" "}
-            <motion.p
-              id="title3"
-              initial={{
-                opacity: 0,
-                x: -30,
-                transitionDelay: "0.4s",
-                transitionDuration: "0.2s",
-                transitionTimingFunction: "easeOut",
-              }}
-              animate={{
-                opacity: 1,
-                x: 0,
-              }}
-            >
-              TCEJORP
-            </motion.p>
+            {data.title.split(" ").map((title, index) => {
+              return (
+                <motion.p
+                  id="title1"
+                  initial={{
+                    opacity: 0,
+                    x: -30,
+                    transitionDelay: `${index * 0.2}s`,
+                    transitionDuration: "0.3s",
+                    transitionTimingFunction: "easeOut",
+                  }}
+                  animate={{
+                    opacity: 1,
+                    x: 0,
+                  }}
+                >
+                  {title}
+                </motion.p>
+              );
+            })}
           </div>
           <motion.div
             id="subtitleContainer"
@@ -91,22 +63,8 @@ const About = ({ goToFocus }) => {
               style={{
                 fontFamily: "MontserratRegular",
               }}
-            >
-              <b
-                style={{
-                  fontFamily: "MontserratBold",
-                  fontWeight: "bold",
-                }}
-              >
-                KK DAO is the first DAO run by a VC firm in Southeast Asia.
-              </b>{" "}
-              We believe that KK DAO can create opportunities for next
-              generation talent in Web 3.0 in developing countries, support the
-              underserved talent in emerging markets. We build, support, and
-              invest in early blockchain-agnostic startups in the area, DAOs,
-              DeFi, CeFi (centralized finance), Web3 Apps, Infrastructure,
-              Wallet, Gaming, and NFT.
-            </p>
+              dangerouslySetInnerHTML={{ __html: data.description }}
+            ></p>
             <motion.button
               id="shareInnovationBtn"
               onClick={() => goToFocus()}
@@ -122,7 +80,7 @@ const About = ({ goToFocus }) => {
                 y: 0,
               }}
             >
-              <b>Share your innovation here!</b>
+              <b>{data.button.content}</b>
             </motion.button>
           </motion.div>
         </div>

@@ -174,7 +174,7 @@
     background-clip: text;
     -text-fill-color: transparent;
     text-shadow: -4px -4px 4px rgba(255, 255, 255, 0.4), 3px 3px 33px rgba(105, 129, 162, 0.2);
-    letter-spacing: 1.165em;
+    /* letter-spacing: 1.165em; */
     display: inline-block;
     background: linear-gradient(0deg, #FFFFFF 40%, rgba(255, 255, 255, 0.5) 94.32%);
     color: white;
@@ -184,7 +184,9 @@
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #93939380;
     text-align: center;
-    width: 100%;
+    display: flex;
+    width: 70vw;
+    justify-content: space-between;
   }
   .title span span {
     letter-spacing: 0;
@@ -271,10 +273,13 @@
     text-align: center;
     margin-bottom: 0;
     font-family: SFUFuturaBold;
-    font-size: 15vh;
     font-weight: 700;
     font-size: 7.8vh;
     line-height: 100%;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-left: 3.9vh;
+    max-width: 40vh;
   }
   .title span {
     -webkit-background-clip: text;

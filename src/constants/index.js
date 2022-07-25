@@ -48,7 +48,11 @@ export const SETTING_HOMEPAGE = {
   title: "KKDAO",
   description:
     '<p class="introContent"><b style="font-family: SFUFutura;">FIRST DAO</b> RUN BY A VC FIRM<br>IN <b style="font-family: SFUFutura;">SOUTHEAST ASIA</b> </p>',
-  cta: { logo_link: "#", twitter_link: "#", email: "contact@tenomad.com" },
+  cta: {
+    email: "mailto:info@kkfund.co?subject=Register",
+    logo_link: "https://www.kkfund.co/",
+    twitter_link: "#",
+  },
 };
 export const SETTING_ABOUT = {
   title: "ABOUT THE PROJECT",
@@ -85,9 +89,20 @@ export const SETTING_INVESTOR = {
   ],
 };
 
+export const SETTING_CONTACT = {
+  cf_email: "Email:",
+  cf_id: "2752",
+  cf_name: "Name:",
+  cf_phone: "Phone:",
+  cf_project_description: "Project Description:",
+  cf_title: "Project name:",
+  cf_button: "SEND",
+};
+
 export const SETTINGS = {
   about: SETTING_ABOUT,
   focus_project: SETTING_FOCUS,
   homepage: SETTING_HOMEPAGE,
   investor: SETTING_INVESTOR,
+  cf: SETTING_CONTACT,
 };

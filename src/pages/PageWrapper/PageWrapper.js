@@ -14,7 +14,6 @@ import { useRef } from "react";
 import TrackVisibility from "react-on-screen";
 import Footer from "../Footer";
 import ToTop from "../ToTop";
-import { useHorizontalScroll } from "./../../components/useHorizontal";
 import { API_ENDPOINT, SETTINGS } from "../../constants";
 
 // const InvestorPage = (props) => {
@@ -158,7 +157,7 @@ const PageWrapper = () => {
             </TrackVisibility>
 
             <div className="page-container" ref={pageRefs[2].ref}>
-              <SignUp isSmallDesktop={isSmallDesktop} isMobile={isMobile} />
+              <SignUp isSmallDesktop={isSmallDesktop} isMobile={isMobile} data={data?.cf} />
             </div>
             {(isSmallDesktop || isMobile) && <Footer />}
             {(isSmallDesktop || isMobile) && <ToTop />}

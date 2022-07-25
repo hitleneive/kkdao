@@ -1,12 +1,13 @@
 import "./SignUp.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Rock5 from "../../assets/KKDAO_Rock/Rock05.png";
 import Rock6 from "../../assets/KKDAO_Rock/Rock06.png";
 import Rock7 from "../../assets/KKDAO_Rock/Rock07.png";
 import Close from "../../assets/close.svg";
 import { motion } from "framer-motion";
+import { SETTING_CONTACT } from "../../constants";
 
-const SignUp = ({ isSmallDesktop, isMobile }) => {
+const SignUp = ({ isSmallDesktop, isMobile, data = SETTING_CONTACT }) => {
   const [isShowingForm, setIsShowingForm] = useState(
     isSmallDesktop || isMobile
   );
@@ -28,6 +29,7 @@ const SignUp = ({ isSmallDesktop, isMobile }) => {
           setIsShowingForm={setIsShowingForm}
           isSmallDesktop={isSmallDesktop}
           isMobile={isMobile}
+          data={data}
         />
       ) : (
         <div id="signUpWrapper">
@@ -52,7 +54,12 @@ const SignUp = ({ isSmallDesktop, isMobile }) => {
   );
 };
 
-const Form = ({ setIsShowingForm, isSmallDesktop, isMobile }) => {
+const Form = ({
+  setIsShowingForm,
+  isSmallDesktop,
+  isMobile,
+  data = SETTING_CONTACT,
+}) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const name = event.target.name.value;
@@ -119,7 +126,7 @@ const Form = ({ setIsShowingForm, isSmallDesktop, isMobile }) => {
 
         <input
           type="text"
-          placeholder="Project name:"
+          placeholder={data.cf_title}
           required
           name="projectName"
           className="formInput verticalInput"
@@ -128,7 +135,7 @@ const Form = ({ setIsShowingForm, isSmallDesktop, isMobile }) => {
         <div id="additionalInfoContainer">
           <input
             type="text"
-            placeholder="Name:"
+            placeholder={data.cf_name}
             required
             className="formInput horizontalInput"
             name="name"
@@ -136,7 +143,7 @@ const Form = ({ setIsShowingForm, isSmallDesktop, isMobile }) => {
           <br id="form-input-spacing" />
           <input
             type="text"
-            placeholder="Email:"
+            placeholder={data.cf_email}
             required
             className="formInput horizontalInput"
             name="email"
@@ -144,7 +151,7 @@ const Form = ({ setIsShowingForm, isSmallDesktop, isMobile }) => {
           <br id="form-input-spacing" />
           <input
             type="text"
-            placeholder="Phone:"
+            placeholder={data.cf_phone}
             required
             className="formInput horizontalInput"
             name="phone"
@@ -159,10 +166,12 @@ const Form = ({ setIsShowingForm, isSmallDesktop, isMobile }) => {
           cols="30"
           className="formInput"
           id="projectDescriptionInput"
-          placeholder="Project Description"
+          placeholder={data.cf_project_description}
         />
         <br />
-        <button type="submit" id="sendBtn" >SEND</button>
+        <button type="submit" id="sendBtn">
+          {data.cf_button}
+        </button>
       </form>
     </motion.div>
   );

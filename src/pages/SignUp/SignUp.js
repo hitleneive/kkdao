@@ -76,23 +76,28 @@ const Form = ({
       description: description,
     };
     window.open(
-      `mailto:info@kkfund.co?subject=Register&body=${
-        "Name: " +
-        name +
-        ", " +
-        "Project name: " +
-        projectName +
-        ", " +
-        "Email: " +
-        email +
-        ", " +
-        "Phone: " +
-        phone +
-        ", " +
-        "Project description: " +
-        description +
-        ", "
-      }`
+      `mailto:info@kkfund.co?subject=Register&body=${encodeURIComponent(
+        data.cf_name +
+          " \n" +
+          name +
+          "\n\n " +
+          data.cf_title +
+          " \n" +
+          projectName +
+          "\n\n " +
+          data.cf_email +
+          " \n" +
+          email +
+          "\n\n " +
+          data.cf_phone +
+          " \n" +
+          phone +
+          "\n\n " +
+          data.cf_project_description +
+          " \n" +
+          description +
+          "\n\n Thank you "
+      )}`
     );
   };
 
